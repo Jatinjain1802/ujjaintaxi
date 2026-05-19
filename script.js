@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.trip-tabs .tab');
     const returnDateRow = document.getElementById('return-date-row');
     const carSelect = document.getElementById('car-type');
-    const fareEstimateBox = document.querySelector('#fare-estimate span');
     
     // Handle tab switching
     tabs.forEach(tab => {
@@ -70,21 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 returnDateRow.style.display = 'none';
             }
         });
-    });
-
-    // Basic Fare Estimator (Client-Side Simulation)
-    // We listen for changes on the car type dropdown to update the UI
-    carSelect.addEventListener('change', (e) => {
-        // Get the selected option element
-        const selectedOption = e.target.options[e.target.selectedIndex];
-        // Get the rate stored in the custom attribute 'data-rate'
-        const rate = selectedOption.getAttribute('data-rate');
-        
-        if (rate) {
-            fareEstimateBox.textContent = `₹${rate}/km base rate`;
-        } else {
-            fareEstimateBox.textContent = `Call for Pricing`;
-        }
     });
 
     // WhatsApp Booking Button Logic (Primary Form)
@@ -178,27 +162,4 @@ document.addEventListener('DOMContentLoaded', () => {
         counterObserver.observe(counter);
     });
 
-    // ==========================================
-    // 5. ACCORDION LOGIC (Terms & Conditions)
-    // ==========================================
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            // Toggle active class on header for styling (changing + to -)
-            header.classList.toggle('active');
-            
-            // The content div is the immediate next sibling
-            const content = header.nextElementSibling;
-            
-            // Scroll height gives the height of the element's content
-            if (content.style.maxHeight) {
-                // If it's open, close it
-                content.style.maxHeight = null;
-            } else {
-                // If it's closed, open it by setting max-height
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        });
-    });
 });

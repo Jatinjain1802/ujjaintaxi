@@ -798,49 +798,53 @@ section {
 /* =========================================================================
    12. TERMS & CONDITIONS (Accordion)
    ========================================================================= */
-.accordion {
-    max-width: 800px;
+/* =========================================================================
+   12. TERMS & CONDITIONS
+   ========================================================================= */
+.terms-card {
+    background: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+    max-width: 1200px;
     margin: 0 auto;
 }
-.accordion-item {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-subtle);
-    margin-bottom: 10px;
-    border-radius: 8px;
-    overflow: hidden;
+.terms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
-.accordion-header {
-    width: 100%;
-    text-align: left;
-    padding: 1.5rem;
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    font-family: var(--font-body);
-    font-weight: 600;
-    cursor: pointer;
+.terms-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 1.2rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.3s ease;
 }
-.accordion-header::after {
-    content: '+';
-    color: var(--accent-gold);
-    font-size: 1.5rem;
+.terms-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border-color: var(--accent-saffron);
 }
-.accordion-header.active::after {
-    content: '-';
+.terms-num {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-saffron);
+    font-family: var(--font-numbers);
+    background: rgba(243, 156, 18, 0.1);
+    padding: 4px 8px;
+    border-radius: 6px;
+    line-height: 1;
 }
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    background: #F9FAFB;
-}
-.accordion-content p {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    color: var(--text-muted);
+.terms-text {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* =========================================================================
