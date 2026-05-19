@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi In Ujjain - Taxi in Ujjain | Local & Outstation Cab Booking at Best Price</title>
+    <meta name="description" content="Affordable taxi service in Ujjain for Mahakal Darshan, Ujjain To Omkareshwar Taxi Booking, Indore to Ujjain travel & local rides. Book now for fast & reliable cab service.">
+    <!-- Google Fonts: Yatra One for Hero, Playfair Display for Headings, DM Sans for body, Space Mono for numbers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@700&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919826157552?text=Hi%2C+I+want+to+book+a+taxi+in+Ujjain" target="_blank" class="floating-wa" aria-label="Book via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.614-.087-.112-.712-.927-.712-1.77 0-.843.438-1.258.598-1.424.16-.167.348-.208.462-.208.114 0 .228 0 .324.005.105.006.246-.04.382.287.142.342.484 1.18.528 1.272.044.092.074.198.016.313-.058.116-.088.185-.175.287-.087.102-.185.215-.262.298-.088.093-.182.196-.076.377.105.181.469.774 1.004 1.252.689.615 1.27.808 1.455.898.186.09.294.075.404-.049.11-.125.474-.55.602-.738.127-.188.254-.156.417-.098.163.058 1.034.488 1.21.576.176.088.293.132.337.206.044.074.044.428-.1.833zm-3.392-10.416c-4.424 0-8.02 3.596-8.02 8.02 0 1.503.414 2.909 1.144 4.148l-1.155 4.225 4.318-1.133c1.196.671 2.57 1.054 4.025 1.054h.001c4.42 0 8.016-3.596 8.016-8.02-.001-4.424-3.596-8.024-8.029-8.024z"/></svg>
+    </a>
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.webp" alt="Taxi In Ujjain Logo">
+                <span>Taxi In Ujjain</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#taxi">Our Taxis</a></li>
+                <li><a href="#tours">Our Tours</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="mobile-only-cta">
+                    <a href="https://wa.me/919826157552" class="btn btn-wa-ghost">💬 WhatsApp Karein</a>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <a href="tel:+919522205111" class="btn btn-primary">📞 Call Now</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="tag">✦ Ujjain's Most Trusted Since 2001</span>
+                <h1>Mahakal Darshan<br>Ki Sahi Sawari</h1>
+                <p>Local • Outstation • Airport • Pilgrimage Tours</p>
+                <div class="hero-ctas">
+                    <a href="tel:+919522205111" class="btn btn-primary">📞 Call Now — 9522205111</a>
+                    <a href="https://wa.me/919826157552" class="btn btn-wa-ghost">💬 WhatsApp Karein</a>
+                </div>
+                <div class="trust-micro">
+                    <span>⭐ 4.9 Rating</span>
+                    <span>284 Reviews</span>
+                    <span>24x7 Available</span>
+                    <span>AC Cabs</span>
+                </div>
+            </div>
+            
+            <!-- 3. BOOKING FORM -->
+            <div class="hero-booking">
+                <div class="booking-card">
+                    <h3>Book Your Ride</h3>
+                    <div class="trip-tabs" id="trip-tabs">
+                        <button class="tab active" data-type="oneway">One Way</button>
+                        <button class="tab" data-type="roundtrip">Round Trip</button>
+                        <button class="tab" data-type="local">Local</button>
+                        <button class="tab" data-type="airport">Airport</button>
+                    </div>
+                    <form id="booking-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <span>📍</span>
+                                <input type="text" placeholder="Pickup Location" required id="pickup">
+                            </div>
+                            <div class="input-group">
+                                <span>🏁</span>
+                                <input type="text" placeholder="Drop Location" required id="drop">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required id="date">
+                            <input type="time" required id="time">
+                        </div>
+                        <div class="form-row" id="return-date-row" style="display: none;">
+                            <input type="date" placeholder="Return Date" id="return-date">
+                        </div>
+                        <div class="form-row">
+                            <select id="car-type" required>
+                                <option value="" disabled selected>Select Car Type</option>
+                                <option value="dzire" data-rate="11">Dzire - ₹11/km</option>
+                                <option value="ertiga" data-rate="13">Ertiga - ₹13/km</option>
+                                <option value="innova_crysta" data-rate="18">Innova Crysta - ₹18/km</option>
+                                <option value="innova_hycross" data-rate="18">Innova Hycross - ₹18/km</option>
+                                <option value="14_seater" data-rate="18">14 Seater Tempo Traveler - ₹18/km</option>
+                                <option value="17_seater">17 Seater Tempo Traveler - Call</option>
+                                <option value="20_seater">20 Seater Tempo Traveler - Call</option>
+                                <option value="26_seater">26 Seater Tempo Traveler - Call</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name" required id="name">
+                            <input type="tel" placeholder="Mobile Number" required id="mobile">
+                        </div>
+                        <div class="fare-estimate" id="fare-estimate">
+                            Estimated Fare: <span class="gold-text">₹ ---</span> <br>
+                            <small>(Estimated based on distance)</small>
+                        </div>
+                        <div class="form-ctas">
+                            <button type="button" class="btn btn-wa-full" id="wa-book-btn">🚖 Book via WhatsApp</button>
+                            <a href="tel:+919522205111" class="btn btn-outline-gold">📞 Call to Confirm</a>
+                        </div>
+                        <p class="form-note">✅ Free Cancellation | ✅ No Hidden Charges</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="chevron"></div>
+        </div>
+    </header>
+
+    <!-- 4. TRUST BAR -->
+    <section class="trust-bar" id="trust-bar">
+        <div class="stat">
+            <h2 class="counter" data-target="25">0</h2><span>+</span>
+            <p>Years in Business</p>
+        </div>
+        <div class="stat">
+            <h2 class="counter" data-target="284">0</h2><span>+</span>
+            <p>Google Reviews</p>
+        </div>
+        <div class="stat">
+            <h2>24×7</h2>
+            <p>Available</p>
+        </div>
+        <div class="stat">
+            <h2 class="counter" data-target="10000">0</h2><span>+</span>
+            <p>Happy Passengers</p>
+        </div>
+    </section>
+
+    <!-- 5. SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Kahan Bhi Jana Ho, Hum Hain Saath</h2>
+            <p>Our Taxi Services</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">✈️</div>
+                <h3>Airport Pickup/Drop</h3>
+                <p>Seamless transfers to and from Indore airport.</p>
+                <a href="https://wa.me/919826157552?text=I+need+airport+pickup/drop" class="link-saffron">Book Now →</a>
+            </div>
+            <div class="service-card">
+                <div class="icon">🏙️</div>
+                <h3>Local City Rides</h3>
+                <p>Explore Ujjain safely with our expert local drivers.</p>
+                <a href="https://wa.me/919826157552?text=I+need+a+local+taxi" class="link-saffron">Book Now →</a>
+            </div>
+            <div class="service-card">
+                <div class="icon">🛣️</div>
+                <h3>Outstation Cabs</h3>
+                <p>Comfortable outstation rides to nearby cities.</p>
+                <a href="https://wa.me/919826157552?text=I+need+an+outstation+cab" class="link-saffron">Book Now →</a>
+            </div>
+            <div class="service-card">
+                <div class="icon">🔄</div>
+                <h3>Round Trip Cabs</h3>
+                <p>Affordable round trips for your complete journey.</p>
+                <a href="https://wa.me/919826157552?text=I+need+a+round+trip+cab" class="link-saffron">Book Now →</a>
+            </div>
+            <div class="service-card">
+                <div class="icon">➡️</div>
+                <h3>One Way Drop</h3>
+                <p>Pay only for the distance you travel.</p>
+                <a href="https://wa.me/919826157552?text=I+need+a+one+way+drop" class="link-saffron">Book Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FLEET / PRICING SECTION -->
+    <section class="fleet" id="taxi">
+        <div class="section-header">
+            <h2>Choose Your Ride</h2>
+        </div>
+        <div class="fleet-scroll-container">
+            <div class="fleet-cards">
+                <!-- Card 1 -->
+                <div class="fleet-card">
+                    <div class="car-icon">🚗</div>
+                    <div class="car-name">Economy Class</div>
+                    <div class="car-model">Maruti Dzire</div>
+                    <div class="price">₹11<span class="per-km">/km</span></div>
+                    <ul class="features">
+                        <li>👤 4 Passengers</li>
+                        <li>🧳 2 Big + 2 Small Bags</li>
+                        <li>❄️ AC & Music</li>
+                    </ul>
+                    <div class="fleet-actions">
+                        <a href="#hero" class="btn btn-outline-gold">Get Estimate</a>
+                        <a href="https://wa.me/919826157552?text=Book+Dzire" class="btn btn-wa-full">WhatsApp Book</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="fleet-card">
+                    <div class="car-icon">🚙</div>
+                    <div class="car-name">Standard Class</div>
+                    <div class="car-model">Ertiga</div>
+                    <div class="price">₹13<span class="per-km">/km</span></div>
+                    <ul class="features">
+                        <li>👤 6 Passengers</li>
+                        <li>🧳 2 Big + 2 Small Bags</li>
+                        <li>❄️ AC & Music</li>
+                    </ul>
+                    <div class="fleet-actions">
+                        <a href="#hero" class="btn btn-outline-gold">Get Estimate</a>
+                        <a href="https://wa.me/919826157552?text=Book+Ertiga" class="btn btn-wa-full">WhatsApp Book</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="fleet-card popular">
+                    <div class="badge">⭐ Most Booked</div>
+                    <div class="car-icon">🚘</div>
+                    <div class="car-name">Business Class</div>
+                    <div class="car-model">Innova Crysta</div>
+                    <div class="price">₹18<span class="per-km">/km</span></div>
+                    <ul class="features">
+                        <li>👤 6 Passengers</li>
+                        <li>✨ Extra Comfort</li>
+                        <li>❄️ AC & Music</li>
+                    </ul>
+                    <div class="fleet-actions">
+                        <a href="#hero" class="btn btn-outline-gold">Get Estimate</a>
+                        <a href="https://wa.me/919826157552?text=Book+Innova+Crysta" class="btn btn-wa-full">WhatsApp Book</a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="fleet-card">
+                    <div class="car-icon">🚖</div>
+                    <div class="car-name">Premium Class</div>
+                    <div class="car-model">Innova Hycross</div>
+                    <div class="price">₹18<span class="per-km">/km</span></div>
+                    <ul class="features">
+                        <li>👤 7 Passengers</li>
+                        <li>💎 Premium Interior</li>
+                        <li>❄️ AC & Music</li>
+                    </ul>
+                    <div class="fleet-actions">
+                        <a href="#hero" class="btn btn-outline-gold">Get Estimate</a>
+                        <a href="https://wa.me/919826157552?text=Book+Innova+Hycross" class="btn btn-wa-full">WhatsApp Book</a>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="fleet-card">
+                    <div class="car-icon">🚐</div>
+                    <div class="car-name">Tempo Traveller</div>
+                    <div class="car-model">14 Seater</div>
+                    <div class="price">₹18<span class="per-km">/km</span></div>
+                    <ul class="features">
+                        <li>👤 11+ Passengers</li>
+                        <li>🧳 Large Capacity</li>
+                        <li>❄️ AC & Music</li>
+                    </ul>
+                    <div class="fleet-actions">
+                        <a href="#home" class="btn btn-outline-gold">Get Estimate</a>
+                        <a href="https://wa.me/919826157552?text=Book+14+Seater+Tempo" class="btn btn-wa-full">WhatsApp Book</a>
+                    </div>
+                </div>
+                 <!-- Card 6 -->
+                 <div class="fleet-card">
+                    <div class="car-icon">🚌</div>
+                    <div class="car-name">Tempo Traveller</div>
+                    <div class="car-model">17 / 20 / 26 Seater</div>
+                    <div class="price-call">Call for Pricing</div>
+                    <ul class="features">
+                        <li>👤 Group Travel</li>
+                        <li>🧳 Extra Luggage</li>
+                        <li>❄️ AC Available</li>
+                    </ul>
+                    <div class="fleet-actions">
+                        <a href="tel:+919522205111" class="btn btn-outline-gold">Call Now</a>
+                        <a href="https://wa.me/919826157552?text=Book+Large+Tempo" class="btn btn-wa-full">WhatsApp Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. TOUR PACKAGES SECTION -->
+    <section class="tours" id="tours">
+        <div class="section-header">
+            <h2>Popular Yatra Packages from Ujjain</h2>
+        </div>
+        <div class="tours-grid">
+            <!-- 1 -->
+            <div class="tour-card">
+                <img src="airport_transfer.png" alt="Indore Airport Drop" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Airport</span>
+                    <h3>Indore Airport Drop</h3>
+                    <p class="route">Ujjain → Indore Airport</p>
+                    <div class="tour-price">₹1,560/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Indore+Airport+Drop" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="tour-card">
+                <img src="mahakal_darshan.png" alt="City Tour (Ujjain Darshan)" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Sightseeing</span>
+                    <h3>City Tour (Ujjain Darshan)</h3>
+                    <p class="route">Local Sightseeing</p>
+                    <div class="tour-price">₹2,500/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Ujjain+Darshan" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="tour-card">
+                <img src="mahakal_darshan.png" alt="Omkareshwar Tour" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Pilgrimage</span>
+                    <h3>Omkareshwar Tour</h3>
+                    <p class="route">Ujjain → Omkareshwar</p>
+                    <div class="tour-price">₹3,500/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Omkareshwar+Tour" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="tour-card">
+                <img src="airport_transfer.png" alt="Bhopal Tour" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Outstation</span>
+                    <h3>Bhopal Tour</h3>
+                    <p class="route">Ujjain → Bhopal</p>
+                    <div class="tour-price">₹5,200/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Bhopal+Tour" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="tour-card">
+                <img src="airport_transfer.png" alt="Sanchi Tour" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Sightseeing</span>
+                    <h3>Sanchi Tour</h3>
+                    <p class="route">Ujjain → Sanchi</p>
+                    <div class="tour-price">₹6,000/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Sanchi+Tour" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="tour-card">
+                <img src="airport_transfer.png" alt="Pachmarhi Tour" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Hill Station</span>
+                    <h3>Pachmarhi Tour</h3>
+                    <p class="route">Ujjain → Pachmarhi</p>
+                    <div class="tour-price">₹9,000/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Pachmarhi+Tour" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="tour-card">
+                <img src="mahakal_darshan.png" alt="Maheshwar Tour" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Pilgrimage</span>
+                    <h3>Maheshwar Tour</h3>
+                    <p class="route">Ujjain → Maheshwar</p>
+                    <div class="tour-price">₹4,500/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Maheshwar+Tour" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="tour-card">
+                <img src="airport_transfer.png" alt="Mandu Tour" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Heritage</span>
+                    <h3>Mandu Tour</h3>
+                    <p class="route">Ujjain → Mandu</p>
+                    <div class="tour-price">₹4,500/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Mandu+Tour" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 9 -->
+            <div class="tour-card">
+                <img src="mahakal_darshan.png" alt="Dewas Darshan" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Pilgrimage</span>
+                    <h3>Dewas Darshan</h3>
+                    <p class="route">Ujjain → Dewas</p>
+                    <div class="tour-price">₹2,000/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Dewas+Darshan" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 10 -->
+            <div class="tour-card">
+                <img src="mahakal_darshan.png" alt="Boreshwar Mahadev" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Pilgrimage</span>
+                    <h3>Boreshwar Mahadev</h3>
+                    <p class="route">Ujjain → Boreshwar</p>
+                    <div class="tour-price">₹2,000/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Boreshwar+Mahadev" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 11 -->
+            <div class="tour-card">
+                <img src="mahakal_darshan.png" alt="4-Dham Package" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Special</span>
+                    <h3>4-Dham Package</h3>
+                    <p class="route">Omkareshwar + Maheshwar + Mamleshwar + Shani Temple</p>
+                    <div class="tour-price">₹5,500/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+4+Dham+Package" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+            <!-- 12 -->
+            <div class="tour-card">
+                <img src="airport_transfer.png" alt="Airport Round Trip" class="tour-img">
+                <div class="tour-content">
+                    <span class="pill-badge">Special</span>
+                    <h3>Airport Round Trip</h3>
+                    <p class="route">Indore Airport → Ujjain Darshan → Indore Airport</p>
+                    <div class="tour-price">₹3,600/-</div>
+                    <a href="https://wa.me/919826157552?text=Book+Airport+Round+Trip" class="link-saffron">Book This Package →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ABOUT US SECTION -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="premium_cab_fleet.png" alt="Premium Taxi Fleet in Ujjain" style="width: 100%; border-radius: 20px; box-shadow: var(--glow-gold); border: 2px solid var(--accent-gold); max-height: 400px; object-fit: cover;">
+            </div>
+            <div class="about-text">
+                <h2>Ujjain Ka Apna Taxi Wala — Since 2001</h2>
+                <p>Taxi In Ujjain is a trusted travel partner operating in the Indian tourism and pilgrimage industry since 2001. We are a professionally managed agency with 25+ years of experience serving pilgrims, tourists, and local travellers across Madhya Pradesh.</p>
+                <p>Our team of verified, experienced drivers and well-maintained vehicles ensures you reach your destination safely and on time — whether it's Mahakal Darshan at dawn or a flight catch at midnight. We're available 24×7.</p>
+                <p>We believe your journey should be as peaceful as your pilgrimage. That's why we provide complimentary Wi-Fi*, mineral water*, newspapers, magazines, and first-aid kits on board. Your comfort is our dharma.</p>
+                <div class="amenities">
+                    <span>📶 Free Wi-Fi*</span>
+                    <span>💧 Mineral Water*</span>
+                    <span>📰 Newspaper*</span>
+                    <span>🩺 First Aid</span>
+                    <span>🎵 Music</span>
+                    <span>❄️ AC</span>
+                </div>
+                <small class="muted-text">*Available on select vehicles</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAMOUS PLACES IN UJJAIN -->
+    <section class="places" id="places">
+        <div class="section-header">
+            <h2>Ujjain Ke Pavitra Sthal</h2>
+            <p>Explore the Sacred City with our trusted drivers</p>
+        </div>
+        <div class="places-grid">
+            <div class="place-card">🕉️ Mahakaleshwar Jyotirlinga <br><a href="#" class="micro-link">Book Taxi →</a></div>
+            <div class="place-card">🛕 Mahakal Lok (New) <br><a href="#" class="micro-link">Book Taxi →</a></div>
+            <div class="place-card">🌊 Ram Ghat / Shipra River <br><a href="#" class="micro-link">Book Taxi →</a></div>
+            <div class="place-card">🌺 Harsiddhi Mata Temple <br><a href="#" class="micro-link">Book Taxi →</a></div>
+            <div class="place-card">🐘 Bada Ganesh Temple <br><a href="#" class="micro-link">Book Taxi →</a></div>
+            <div class="place-card">🐘 Chintaman Ganesh Temple <br><a href="#" class="micro-link">Book Taxi →</a></div>
+            <div class="place-card">🔱 Mangalnath Temple <br><a href="#" class="micro-link">Book Taxi →</a></div>
+            <div class="place-card">🐕 Kal Bhairav Temple <br><a href="#" class="micro-link">Book Taxi →</a></div>
+        </div>
+        <div class="places-cta">
+            <p>Planning a darshan tour? Call us and we'll arrange everything.</p>
+            <a href="https://wa.me/919826157552?text=Plan+My+Ujjain+Tour" class="btn btn-primary">Plan My Ujjain Tour</a>
+        </div>
+    </section>
+
+    <!-- 10. TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>Yatriyon Ki Baat</h2>
+            <p>⭐ 4.9/5 · 284 Google Reviews</p>
+        </div>
+        <div class="test-scroll-container">
+            <div class="test-cards">
+                <div class="test-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Great service — very punctual and helpful. The driver was understanding and cooperative throughout our journey."</p>
+                    <p class="reviewer">Archit Srivastava <br><small>May 2024</small></p>
+                </div>
+                <div class="test-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Awesome experience. Undoubtedly a great choice for Ujjain tour. Thanks Soni Ji for the help beyond just the taxi service!"</p>
+                    <p class="reviewer">Raghavendra Pavan <br><small>April 2024</small></p>
+                </div>
+                <div class="test-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"I came to Ujjain on a solo trip and safety was my biggest concern. They arranged everything perfectly. Even dropped me to the station at no extra charge."</p>
+                    <p class="reviewer">Ritu Vyas <br><small>April 2024</small></p>
+                </div>
+                <div class="test-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="quote">"Booked a cab for Omkareshwar — timely and professional. Satya Soni ji and the driver were excellent."</p>
+                    <p class="reviewer">Pawan Kumar Bansal <br><small>April 2024, Retired Sr. Manager</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="test-cta text-center" style="margin-top: 2rem;">
+            <a href="https://google.com" target="_blank" class="link-saffron">See All 284 Reviews on Google →</a>
+        </div>
+    </section>
+
+    <!-- 11. TERMS & CONDITIONS -->
+    <section class="terms" id="terms">
+        <div class="section-header">
+            <h2>Terms & Conditions — Please Read Before Booking</h2>
+        </div>
+        <div class="accordion" id="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">1. Distance Limit</button>
+                <div class="accordion-content"><p>Maximum average will be 300 Kms. per day.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">2. Extra Charges</button>
+                <div class="accordion-content"><p>Toll Tax, Parking Passenger Tax will be paid by the party.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">3. Cancellation Policy</button>
+                <div class="accordion-content"><p>Advance is not refundable on cancellation of the vehicle.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">4. Seating Capacity</button>
+                <div class="accordion-content"><p>Vehicle will not accommodate passengers more than Seating Capacity.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">5. Luggage Responsibility</button>
+                <div class="accordion-content"><p>Party will be responsible for their goods and luggage carried in the vehicle.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">6. Contradictions & Taxes</button>
+                <div class="accordion-content"><p>All contradiction will be paid by the party (Like Toll tax, Inter state tax etc).</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">7. Day Calculation</button>
+                <div class="accordion-content"><p>Vehicle booked any time in the day will be charged second day after 12:00 midnight.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">8. Minimum Distance Guarantee</button>
+                <div class="accordion-content"><p>If Vehicle is run less than averages Kms, Party will have to pay according to average Kms.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">9. Route Responsibility</button>
+                <div class="accordion-content"><p>Party will be responsible for the challan / penalty for the wrong guidance of the road by them.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">10. Night Charges</button>
+                <div class="accordion-content"><p>Night charges applicable according to condition and situation, It may be between ₹300 to ₹500.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Hamse Baat Karein</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-card">📞 Primary: <a href="tel:+919522205111">+91 9522205111</a></div>
+                <div class="info-card">📱 WhatsApp: <a href="https://wa.me/919826157552">+91 9826157552</a></div>
+                <div class="info-card">📧 Email: <a href="mailto:taxiinujjain.in@gmail.com">taxiinujjain.in@gmail.com</a></div>
+                <div class="info-card">
+                    📍 Address: <br>
+                    67B, Atharva Vihar Colony, Ujjain-Indore Road,<br>
+                    near Hotel Shanti Palace, Nanakheda, Ujjain — 456010
+                </div>
+                <!-- Google Maps Embed -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14674.331295982736!2d75.7681!3d23.1485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA4JzU0LjYiTiA3NcKwNDYnMDguMiJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" width="100%" height="250" style="border:0; border-radius:12px; margin-top: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="contact-form">
+                <!-- Repeating a single clean booking form as specified -->
+                <h3>Quick Booking Request</h3>
+                <form id="contact-booking">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="tel" placeholder="Mobile Number" required>
+                    <input type="text" placeholder="Pickup Location" required>
+                    <input type="text" placeholder="Drop Location" required>
+                    <select required>
+                        <option value="" disabled selected>Car Type</option>
+                        <option value="Dzire">Dzire</option>
+                        <option value="Ertiga">Ertiga</option>
+                        <option value="Innova Crysta">Innova Crysta</option>
+                        <option value="Innova Hycross">Innova Hycross</option>
+                        <option value="14 Seater Tempo Traveler">14 Seater Tempo Traveler</option>
+                        <option value="17 Seater Tempo Traveler">17 Seater Tempo Traveler</option>
+                        <option value="20 Seater Tempo Traveler">20 Seater Tempo Traveler</option>
+                        <option value="26 Seater Tempo Traveler">26 Seater Tempo Traveler</option>
+                    </select>
+                    <input type="date" required>
+                    <button type="submit" class="btn btn-wa-full mt-1">Send Booking Request via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="logo.webp" alt="Taxi In Ujjain Logo">
+                    <span>Taxi In Ujjain</span>
+                </div>
+                <p>Ujjain's Trusted Cab Service Since 2001</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#taxi">Our Taxis</a></li>
+                    <li><a href="#tours">Our Tours</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tour Destinations</h4>
+                <ul>
+                    <li>Omkareshwar</li>
+                    <li>Indore Airport</li>
+                    <li>Bhopal</li>
+                    <li>Pachmarhi</li>
+                    <li>Maheshwar</li>
+                    <li>Mandu</li>
+                    <li>Sanchi</li>
+                    <li>Dewas</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📞 <a href="tel:+919522205111">9522205111</a></p>
+                <p>📱 <a href="https://wa.me/919826157552">9826157552 (WhatsApp)</a></p>
+                <p>📧 <a href="mailto:taxiinujjain.in@gmail.com">taxiinujjain.in@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Taxi In Ujjain. All rights reserved. | Powered by Heerova Solution</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
