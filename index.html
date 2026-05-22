@@ -10,6 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@700&family=Yatra+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Early theme detection script to prevent theme flashing on load -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Floating WhatsApp Button -->
@@ -25,12 +34,12 @@
                 <span>Taxi In Ujjain</span>
             </div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#taxi">Our Taxis</a></li>
-                <li><a href="#tours">Our Tours</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html#taxi">Our Taxis</a></li>
+                <li><a href="tours.html">Our Tours</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li class="mobile-only-cta">
                     <a href="https://wa.me/919826157552" class="btn btn-wa-ghost">💬 WhatsApp Karein</a>
                 </li>
@@ -617,12 +626,13 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#taxi">Our Taxis</a></li>
-                    <li><a href="#tours">Our Tours</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="services.html#taxi">Our Taxis</a></li>
+                    <li><a href="tours.html">Our Tours</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
                 </ul>
             </div>
             <div class="footer-col">

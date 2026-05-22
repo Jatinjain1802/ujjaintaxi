@@ -1,26 +1,100 @@
 /* =========================================================================
-   Taxi In Ujjain - Theme: "Sacred Gold & Night Sky"
+   Taxi In Ujjain - Theme: "Sacred Gold & Royal Night Sky"
+   Designed with high-converting professional aesthetics and Ujjain's heritage.
    ========================================================================= */
 
-/* 1. CSS VARIABLES (Design Tokens) */
+/* -------------------------------------------------------------------------
+   1. CSS VARIABLES (Design Tokens)
+   -------------------------------------------------------------------------
+   LEARNING TIP: Using CSS Variables at the :root level is a professional best
+   practice. It defines design tokens in a single source of truth, enabling
+   global, instantaneous style changes throughout the stylesheet.
+   ------------------------------------------------------------------------- */
 :root {
-    --bg-primary: #FAFAFA;
-    --bg-secondary: #FFFFFF;
-    --accent-gold: #D4AF37;
-    --accent-saffron: #FF6B35;
-    --text-primary: #1F2937;
-    --text-muted: #6B7280;
-    --border-subtle: #E5E7EB;
-    --success-green: #10B981;
-    --glow-gold: 0 10px 25px rgba(212, 175, 55, 0.15);
+    /* Premium Obsidian & Carbon Gray (Taxi App Visual System) */
+    --bg-primary: #0A0A0F;        /* Ultra-dark Obsidian Black */
+    --bg-secondary: #13131C;      /* Sleek Carbon Dark Gray for cards and sections */
+    --bg-tertiary: #1B1B26;       /* Slate/Carbon tint for focus states and inputs */
     
-    --font-hero: 'Yatra One', cursive;
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
-    --font-numbers: 'Space Mono', monospace;
+    /* High-Visibility Electric Taxi Amber & Sunset Saffron */
+    --accent-gold: #FFB800;       /* High-visibility Electric Taxi Amber / Gold */
+    --accent-gold-glow: rgba(255, 184, 0, 0.28);
+    --accent-saffron: #FF5722;    /* Sunset Saffron - Preserving Holy Ujjain Heritage */
+    --accent-saffron-glow: rgba(255, 87, 34, 0.35);
+    
+    /* Premium Gradients */
+    --accent-gold-gradient: linear-gradient(135deg, #FFF2CC 0%, #FFB800 60%, #D69900 100%);
+    --accent-saffron-gradient: linear-gradient(135deg, #FF8A65 0%, #FF5722 100%);
+    --glass-background: rgba(10, 10, 15, 0.82);
+    
+    /* High Readability Off-White Typography */
+    --text-primary: #F8F9FA;      /* Clean Off-White */
+    --text-muted: #9E9EAF;        /* Soft Slate Gray for description paragraphs */
+    --text-gold: #FFC72C;         /* Vivid bright yellow-gold for highlight tags */
+    
+    /* Borders & Outlines */
+    --border-gold: rgba(255, 184, 0, 0.22);
+    --border-subtle: rgba(158, 158, 175, 0.12);
+    --success-green: #00E676;     /* Vivid WhatsApp Neon Green */
+    --success-green-glow: rgba(0, 230, 118, 0.35);
+    
+    /* High-contrast Glow & Depth Shadows */
+    --shadow-royal: 0 16px 40px rgba(0, 0, 0, 0.75);
+    --shadow-inner-gold: inset 0 0 15px rgba(255, 184, 0, 0.1);
+    --glow-gold: 0 0 30px rgba(255, 184, 0, 0.22);
+    --glow-saffron: 0 0 30px rgba(255, 87, 34, 0.25);
+    
+    /* Font Families */
+    --font-hero: 'Yatra One', cursive;          /* Heritage font for top-level headers */
+    --font-heading: 'Playfair Display', serif;   /* Timeless elegant editorial font */
+    --font-body: 'DM Sans', sans-serif;          /* Modern clean readable layout font */
+    --font-numbers: 'Space Mono', monospace;     /* Tech-precision font for statistics */
 }
 
-/* 2. GLOBAL RESET & BASE STYLES */
+/* -------------------------------------------------------------------------
+   1B. PREMIUM LIGHT THEME OVERRIDES ("Pure Alabaster & Royal Gold")
+   -------------------------------------------------------------------------
+   LEARNING TIP: To implement a light theme, we do NOT write duplicate CSS selectors.
+   Instead, we only override the design token values within a .light-theme class 
+   added to the <body> element. The browser automatically cascades these overrides 
+   down through the DOM, updating the colors of all components instantaneously!
+   ------------------------------------------------------------------------- */
+.light-theme {
+    /* Pure Alabaster & Light Slate System */
+    --bg-primary: #F4F6F9;        /* Soft Alabaster White base (prevents screen glare) */
+    --bg-secondary: #FFFFFF;      /* Elevated Pure White for cards & containers */
+    --bg-tertiary: #E8EBF2;       /* Light Platinum for inputs & inactive states */
+    
+    /* Contrast-Optimized Dark Typography */
+    --text-primary: #101115;      /* Obsidian/Charcoal Dark for sharp header readability */
+    --text-muted: #565969;        /* Balanced neutral grey for description text */
+    --text-gold: #C27D00;         /* Deep rich golden-amber for accessible highlights */
+    
+    /* Contrast-Optimized Accent Elements */
+    --accent-gold: #D49000;       /* Rich golden amber (deepened to ensure contrast against white) */
+    --accent-gold-glow: rgba(212, 144, 0, 0.15);
+    --accent-saffron: #E64A19;    /* Deeper sunset saffron for high-contrast Indian heritage */
+    --accent-saffron-glow: rgba(230, 74, 25, 0.15);
+    
+    /* Gradients adapted for light backgrounds */
+    --accent-gold-gradient: linear-gradient(135deg, #FFF6E0 0%, #D49000 70%, #9E6B00 100%);
+    --accent-saffron-gradient: linear-gradient(135deg, #FF9E80 0%, #E64A19 100%);
+    --glass-background: rgba(255, 255, 255, 0.88);
+    
+    /* Borders & Outlines */
+    --border-gold: rgba(212, 144, 0, 0.28);
+    --border-subtle: rgba(16, 17, 21, 0.08);
+    
+    /* Shadows */
+    --shadow-royal: 0 16px 40px rgba(16, 17, 21, 0.06); /* Soft elegant drop shadows instead of heavy black glows */
+    --shadow-inner-gold: inset 0 0 15px rgba(212, 144, 0, 0.05);
+    --glow-gold: 0 0 35px rgba(212, 144, 0, 0.12);
+    --glow-saffron: 0 0 35px rgba(230, 74, 25, 0.12);
+}
+
+/* -------------------------------------------------------------------------
+   2. GLOBAL RESET & BASE STYLES
+   ------------------------------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -38,62 +112,102 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-gold);
+    border-radius: 10px;
+    border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-saffron);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    margin-bottom: 1rem;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 ul {
     list-style: none;
 }
 
-/* Base Buttons */
+/* -------------------------------------------------------------------------
+   3. BUTTON SYSTEM
+   LEARNING TIP: Bouncy, elastic feeling on buttons is created by transition
+   curves. We use custom cubic-bezier (0.165, 0.84, 0.44, 1) rather than simple
+   ease-in-out to mimic high-end inertia effects.
+   ------------------------------------------------------------------------- */
 .btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.8rem;
     border-radius: 50px;
     font-weight: 600;
+    font-size: 0.95rem;
     cursor: pointer;
     text-align: center;
     border: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 8px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-saffron));
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    background: var(--accent-saffron-gradient);
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px var(--accent-saffron-glow);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 8px 25px var(--accent-saffron-glow), var(--glow-saffron);
 }
 
 .btn-wa-ghost {
-    background: transparent;
+    background: rgba(46, 204, 113, 0.08);
     color: var(--success-green);
     border: 1px solid var(--success-green);
 }
 
 .btn-wa-ghost:hover {
-    background: rgba(40, 199, 111, 0.1);
+    background: var(--success-green);
+    color: #FFFFFF;
+    box-shadow: 0 5px 20px var(--success-green-glow);
 }
 
 .btn-wa-full {
     background: var(--success-green);
-    color: #fff;
+    color: #FFFFFF;
     width: 100%;
-    display: block;
+    display: flex;
     margin-bottom: 0.8rem;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+}
+
+.btn-wa-full:hover {
+    box-shadow: 0 8px 25px var(--success-green-glow);
 }
 
 .btn-outline-gold {
@@ -101,87 +215,126 @@ ul {
     color: var(--accent-gold);
     border: 1px solid var(--accent-gold);
     width: 100%;
-    display: block;
 }
 
 .btn-outline-gold:hover {
-    background: rgba(245, 166, 35, 0.1);
+    background: rgba(255, 184, 0, 0.08);
+    box-shadow: var(--glow-gold);
 }
 
 .link-saffron {
     color: var(--accent-saffron);
     font-weight: 600;
-}
-.link-saffron:hover {
-    color: var(--accent-gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
-/* Sections */
+.link-saffron:hover {
+    color: var(--accent-gold);
+    transform: translateX(4px);
+}
+
+/* -------------------------------------------------------------------------
+   4. LAYOUT SECTIONS & HEADERS
+   ------------------------------------------------------------------------- */
 section {
-    padding: 5rem 5%;
+    padding: 6rem 8%;
     position: relative;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
+
 .section-header h2 {
-    font-size: 2.5rem;
-    color: var(--accent-gold);
+    font-size: 2.8rem;
+    background: var(--accent-gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.75rem;
+    position: relative;
+    display: inline-block;
 }
+
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-gold-gradient);
+    margin: 12px auto 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 184, 0, 0.4);
+}
+
 .section-header p {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Utilities */
+/* Utility Helpers */
 .text-center { text-align: center; }
 .mt-1 { margin-top: 1rem; }
-.gold-text { color: var(--accent-gold); font-family: var(--font-numbers); font-size: 1.2rem; }
+.gold-text { color: var(--accent-gold); font-family: var(--font-numbers); font-size: 1.25rem; }
 .muted-text { color: var(--text-muted); }
 
-/* Floating WhatsApp */
+/* Floating WhatsApp Button with elegant pulse glow rings */
 .floating-wa {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 56px;
-    height: 56px;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
     background-color: var(--success-green);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    box-shadow: 0 0 20px rgba(40, 199, 111, 0.4);
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(40, 199, 111, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(40, 199, 111, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(40, 199, 111, 0); }
+    box-shadow: 0 8px 30px rgba(46, 204, 113, 0.4);
+    animation: wa-pulse 2s infinite;
 }
 
-/* =========================================================================
-   3. NAVBAR
-   ========================================================================= */
+@keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+    70% { box-shadow: 0 0 0 18px rgba(46, 204, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+/* -------------------------------------------------------------------------
+   5. SLEEK NAVBAR (Sticky Glassmorphic Header)
+   LEARNING TIP: Frosted glass uses standard backdrop-filter: blur().
+   Semi-transparent background ensures content behind the bar doesn't distract.
+   ------------------------------------------------------------------------- */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(245, 166, 35, 0.3);
+    /* LEARNING TIP: We use CSS variables instead of hardcoded background colors here,
+       so the navbar background seamlessly adjusts to the active theme (dark/light)! */
+    background: var(--glass-background);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-gold);
     z-index: 1000;
-    transition: background 0.3s;
+    transition: all 0.4s ease, background 0.5s ease;
+}
+
+/* Elegant scrolled state managed via CSS rather than hardcoding in JS scroll events */
+.navbar.navbar-scrolled {
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-royal);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 1.2rem 8%;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -189,30 +342,56 @@ section {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--text-primary);
+    background: var(--accent-gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .logo img {
-    height: 40px;
+    height: 44px;
     width: auto;
+    filter: drop-shadow(0 0 8px rgba(255, 184, 0, 0.2));
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.2rem;
+    align-items: center;
 }
 
 .nav-links li a {
-    color: var(--text-primary);
+    color: var(--text-muted);
     font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 5px 0;
 }
+
 .nav-links li a:hover {
     color: var(--accent-gold);
 }
+
+/* Elegant growing gold line on nav-link hover */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold-gradient);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
 .mobile-only-cta {
     display: none;
 }
@@ -220,7 +399,7 @@ section {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .hamburger {
@@ -229,37 +408,56 @@ section {
     border: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
 }
+
 .hamburger .bar {
-    width: 25px;
+    width: 28px;
     height: 3px;
-    background-color: var(--text-primary);
+    background-color: var(--accent-gold);
+    border-radius: 5px;
     transition: all 0.3s ease;
 }
 
-/* =========================================================================
-   4. HERO SECTION
-   ========================================================================= */
+/* -------------------------------------------------------------------------
+   6. HERO SECTION & GLASSMORPHIC BOOKING CARD
+   ------------------------------------------------------------------------- */
 .hero {
-    height: 100vh;
-    min-height: 700px;
-    background: linear-gradient(135deg, #FFF7ED 0%, #FFF1F2 100%);
+    min-height: 100vh;
+    /* LEARNING TIP: Swapped the hardcoded slate-indigo #1A1A26 with our sleek Carbon Dark Gray variable to maintain Obsidian theme consistency */
+    background: radial-gradient(circle at 10% 20%, var(--bg-secondary) 0%, var(--bg-primary) 80%);
     position: relative;
     display: flex;
     align-items: center;
-    padding-top: 80px; /* offset navbar */
+    padding-top: 100px;
+    padding-bottom: 4rem;
     overflow: hidden;
 }
 
-/* Mandala Pattern (CSS svg background pattern) */
+/* Mandala Pattern Overlay & Starry Twinkle Animation
+   LEARNING TIP: To make a background feel alive without resource-heavy canvas engines,
+   we layer multiple CSS radial gradients representing stars of different sizes, then animate
+   the container's opacity using keyframes to simulate starry twinkling. */
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-image: radial-gradient(var(--border-subtle) 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.05;
+    background-image: 
+        radial-gradient(rgba(255, 184, 0, 0.08) 1.2px, transparent 1.2px),
+        radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px),
+        radial-gradient(circle at 75% 35%, rgba(255, 255, 255, 0.14) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 45% 15%, rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px),
+        radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.15) 2px, transparent 2px),
+        radial-gradient(circle at 25% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    opacity: 0.65;
     pointer-events: none;
+    animation: starry-twinkle 8s infinite alternate ease-in-out;
+}
+
+@keyframes starry-twinkle {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.85; }
+    100% { opacity: 0.6; }
 }
 
 .hero-content {
@@ -269,739 +467,1259 @@ section {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 5%;
-    position: relative;
-    z-index: 10;
+    padding: 0;
+    position: z-index 10;
+    gap: 3rem;
 }
 
 .hero-text {
     flex: 1;
-    max-width: 600px;
+    max-width: 620px;
 }
 
 .hero-text .tag {
     display: inline-block;
-    color: var(--accent-gold);
-    border: 1px solid var(--accent-gold);
-    padding: 5px 15px;
-    border-radius: 20px;
+    color: var(--text-gold);
+    border: 1px solid var(--border-gold);
+    padding: 6px 18px;
+    border-radius: 30px;
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    background: rgba(245, 166, 35, 0.1);
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    background: rgba(255, 184, 0, 0.06);
+    box-shadow: var(--shadow-inner-gold);
 }
 
 .hero-text h1 {
     font-family: var(--font-hero);
-    font-size: 4rem;
-    line-height: 1.1;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    text-shadow: none;
+    font-size: 4.8rem;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFEFCF 50%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.5px;
 }
 
 .hero-ctas {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
 }
 
 .trust-micro {
     display: flex;
-    gap: 1.5rem;
-    font-size: 0.9rem;
+    gap: 2rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
 }
+
 .trust-micro span {
     display: flex;
     align-items: center;
+    gap: 6px;
 }
 
-/* Booking Form Card */
+.trust-micro span::before {
+    content: '✦';
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+}
+
+/* Glassmorphic Booking Card Layout */
 .hero-booking {
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
+
 .booking-card {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(245, 166, 35, 0.3);
-    border-radius: 20px;
-    padding: 2rem;
+    background: var(--glass-background);
+    border: 1px solid var(--border-gold);
+    border-radius: 24px;
+    padding: 2.2rem;
     width: 100%;
-    max-width: 450px;
-    backdrop-filter: blur(10px);
-    box-shadow: var(--glow-gold);
+    max-width: 480px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
 }
 
 .booking-card h3 {
     text-align: center;
     color: var(--text-primary);
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.8rem;
 }
 
 .trip-tabs {
     display: flex;
-    background: var(--bg-secondary);
-    border-radius: 10px;
+    /* LEARNING TIP: Cleaned up navy-blue fallback to a neutral, dark semi-transparent obsidian glass layer */
+    background: rgba(10, 10, 15, 0.5);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
     overflow: hidden;
     margin-bottom: 1.5rem;
+    padding: 4px;
 }
+
 .trip-tabs .tab {
     flex: 1;
-    padding: 10px 5px;
+    padding: 8px 4px;
     background: transparent;
     border: none;
     color: var(--text-muted);
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
     font-family: var(--font-body);
-    transition: 0.3s;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
+
 .trip-tabs .tab.active {
-    background: var(--accent-gold);
+    background: var(--accent-gold-gradient);
     color: var(--bg-primary);
     font-weight: 700;
 }
 
 .form-row {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 15px;
 }
+
 .form-row .input-group {
     position: relative;
     flex: 1;
 }
+
 .form-row .input-group span {
     position: absolute;
-    left: 10px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 1rem;
+    opacity: 0.85;
 }
+
 .form-row input, .form-row select {
     width: 100%;
-    padding: 12px;
-    background: var(--bg-secondary);
+    padding: 13px 12px;
+    /* LEARNING TIP: Upgraded inputs from indigo-black to cohesive obsidian-glass backdrops */
+    background: rgba(10, 10, 15, 0.7);
     border: 1px solid var(--border-subtle);
-    border-radius: 8px;
+    border-radius: 10px;
     color: var(--text-primary);
     font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
 }
+
+/* Webkit browser adjustments for inputs in dark mode */
+.form-row input[type="date"], .form-row input[type="time"] {
+    color-scheme: dark;
+}
+
 .form-row .input-group input {
-    padding-left: 35px;
+    padding-left: 38px;
 }
+
 .form-row input:focus, .form-row select:focus {
     outline: none;
     border-color: var(--accent-gold);
+    /* LEARNING TIP: Upgraded from old indigo-blue backdrop to a sleek Carbon Slate tint.
+       By blending the tertiary background with a warm golden glow and inner gold inset shadow,
+       the input glow becomes cohesive with our Premium Obsidian & Cyber Cab Amber design system. */
+    background: var(--bg-tertiary);
+    box-shadow: 0 0 15px var(--accent-gold-glow), var(--shadow-inner-gold);
 }
 
-.fare-estimate {
-    text-align: center;
-    background: rgba(245, 166, 35, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
+.form-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1.5rem;
 }
 
 .form-note {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
-    margin-top: 10px;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
 }
 
+/* Scroll indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 20px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.8rem;
-    animation: bounce 2s infinite;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    animation: scroll-bounce 2s infinite;
 }
+
 .scroll-indicator .chevron {
     width: 10px;
     height: 10px;
     border-right: 2px solid var(--accent-gold);
     border-bottom: 2px solid var(--accent-gold);
     transform: rotate(45deg);
-    margin: 5px auto;
-}
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
-    40% {transform: translateY(-10px) translateX(-50%);}
-    60% {transform: translateY(-5px) translateX(-50%);}
+    margin: 6px auto 0 auto;
 }
 
-/* =========================================================================
-   5. TRUST BAR
-   ========================================================================= */
+@keyframes scroll-bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-8px) translateX(-50%);}
+    60% {transform: translateY(-4px) translateX(-50%);}
+}
+
+/* -------------------------------------------------------------------------
+   7. TRUST BAR SECTION
+   ------------------------------------------------------------------------- */
 .trust-bar {
     background: var(--bg-secondary);
-    padding: 3rem 5%;
+    padding: 3.5rem 8%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    border-top: 1px solid var(--border-subtle);
-    border-bottom: 1px solid var(--border-subtle);
+    gap: 3rem;
+    border-top: 1px solid var(--border-gold);
+    border-bottom: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-inner-gold);
 }
+
 .trust-bar .stat {
     text-align: center;
+    position: relative;
 }
-.trust-bar .stat h2 {
+
+/* Custom separators between counters on wide screens */
+@media (min-width: 993px) {
+    .trust-bar .stat:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: -80px;
+        top: 15%;
+        height: 70%;
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, var(--border-gold), transparent);
+    }
+}
+
+.trust-bar .stat h2, .trust-bar .stat .counter {
     display: inline-block;
     color: var(--accent-gold);
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: 700;
     font-family: var(--font-numbers);
     margin-bottom: 0;
+    background: var(--accent-gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.trust-bar .stat span {
-    color: var(--accent-gold);
-    font-size: 2.5rem;
-    font-family: var(--font-numbers);
-}
+
 .trust-bar .stat p {
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    font-weight: 600;
 }
 
-/* =========================================================================
-   6. SERVICES
-   ========================================================================= */
+/* -------------------------------------------------------------------------
+   8. SERVICES SECTION
+   ------------------------------------------------------------------------- */
+.services {
+    background: var(--bg-primary);
+}
+
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .service-card {
     background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 15px;
+    padding: 2.8rem 2.2rem;
+    border-radius: 20px;
     border: 1px solid var(--border-subtle);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     text-align: center;
-}
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--glow-gold);
-    border-color: rgba(245, 166, 35, 0.3);
-}
-.service-card .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-.service-card h3 {
-    color: var(--text-primary);
-}
-.service-card p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
-/* =========================================================================
-   7. FLEET / PRICING
-   ========================================================================= */
+/* Radial light overlay in the card background on card hover */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(255, 184, 0, 0.08), transparent 60%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+/* Medallion-Style Rounded Service Icons
+   LEARNING TIP: Wrapping simple emojis in circular borders with subtle inner shadows and a radial
+   gradient on hover creates an emblem or coin-like visual asset. Using rotateY(360deg) makes it spin
+   majestically on the 3D Y-axis. */
+.service-card .icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: rgba(255, 184, 0, 0.08);
+    border: 1px solid var(--border-gold);
+    margin: 0 auto 1.6rem auto;
+    font-size: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-inner-gold);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-card:hover .icon {
+    background: var(--accent-gold-gradient);
+    color: var(--bg-primary);
+    box-shadow: 0 0 20px var(--accent-gold-glow);
+    transform: rotateY(360deg) scale(1.05);
+}
+
+.service-card h3 {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    margin-bottom: 1.8rem;
+}
+
+/* -------------------------------------------------------------------------
+   9. FLEET / TARIFF SECTION (Choose Your Ride)
+   ------------------------------------------------------------------------- */
+.fleet {
+    background: radial-gradient(circle at bottom left, #13131C 0%, var(--bg-primary) 70%);
+}
+
 .fleet-scroll-container {
     max-width: 1400px;
     margin: 0 auto;
     overflow-x: auto;
-    padding-bottom: 2rem;
-    /* Hide scrollbar for clean look but keep scrollable */
-    scrollbar-width: none; 
+    padding: 1.5rem 0.5rem 3rem 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) var(--bg-primary);
 }
-.fleet-scroll-container::-webkit-scrollbar { display: none; }
 
 .fleet-cards {
     display: flex;
-    gap: 2rem;
-    padding: 1rem;
+    gap: 2.2rem;
+    width: max-content;
+    padding: 0.5rem;
 }
+
 .fleet-card {
-    flex: 0 0 300px;
+    width: 320px;
     background: var(--bg-secondary);
-    border-radius: 15px;
-    padding: 2rem;
+    border-radius: 20px;
+    padding: 2.5rem 2.2rem;
     border: 1px solid var(--border-subtle);
     position: relative;
     text-align: center;
-    transition: transform 0.3s;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--shadow-royal);
 }
+
 .fleet-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
 }
+
 .fleet-card.popular {
     border-color: var(--accent-gold);
-    box-shadow: var(--glow-gold);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
+    /* LEARNING TIP: Transitioned the popular cab highlight from a navy blue gradient to a rich Carbon Gray-to-Slate flow */
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
 }
+
+/* Hot badge for most booked cabs */
 .fleet-card .badge {
     position: absolute;
-    top: -12px;
+    top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent-gold);
-    color: var(--bg-primary);
-    padding: 4px 15px;
-    border-radius: 20px;
+    background: var(--accent-saffron-gradient);
+    color: #FFFFFF;
+    padding: 5px 16px;
+    border-radius: 30px;
     font-size: 0.8rem;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    box-shadow: var(--glow-saffron);
 }
+
+/* Premium Circular Fleet Car Frames
+   LEARNING TIP: Applying scale adjustments on circular elements during parent card hover events
+   draws immediate attention to the asset while maintaining a unified, elegant visual grid. */
 .fleet-card .car-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 184, 0, 0.08);
+    border: 1px solid var(--border-gold);
+    margin: 0 auto 1.5rem auto;
+    font-size: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-inner-gold);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.fleet-card:hover .car-icon {
+    background: rgba(255, 184, 0, 0.14);
+    border-color: var(--accent-gold);
+    box-shadow: var(--glow-gold);
+    transform: scale(1.1);
+}
+
 .fleet-card .car-name {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.55rem;
+    font-weight: 700;
     color: var(--text-primary);
+    margin-bottom: 0.2rem;
 }
+
 .fleet-card .car-model {
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-}
-.fleet-card .price {
-    font-size: 2.5rem;
     color: var(--accent-gold);
-    font-family: var(--font-numbers);
+    font-size: 0.95rem;
+    font-weight: 600;
     margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
 }
+
+.fleet-card .price {
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    font-family: var(--font-numbers);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
 .fleet-card .price .per-km {
     font-size: 1rem;
     color: var(--text-muted);
-}
-.fleet-card .price-call {
-    font-size: 1.5rem;
-    color: var(--accent-gold);
-    margin-bottom: 1.5rem;
-    padding: 1rem 0;
-}
-.fleet-card .features {
-    text-align: left;
-    margin-bottom: 2rem;
-}
-.fleet-card .features li {
-    padding: 5px 0;
-    border-bottom: 1px solid var(--border-subtle);
-    color: var(--text-muted);
-}
-.fleet-card .features li:last-child {
-    border-bottom: none;
-}
-.fleet-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* =========================================================================
-   8. TOUR PACKAGES
-   ========================================================================= */
-.tours-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-.tour-card {
-    background: var(--bg-secondary);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid var(--border-subtle);
-    transition: transform 0.3s;
-}
-.tour-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--glow-gold);
-}
-.tour-img {
-    height: 180px;
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.tour-card:hover .tour-img {
-    transform: scale(1.06);
-}
-
-.tour-content {
-    padding: 1.5rem;
-}
-.pill-badge {
-    background: rgba(245, 166, 35, 0.1);
-    color: var(--accent-gold);
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    display: inline-block;
-    margin-bottom: 1rem;
-}
-.tour-content h3 {
-    margin-bottom: 0.5rem;
-}
-.tour-content .route {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-.tour-price {
-    font-size: 1.8rem;
-    color: var(--accent-gold);
-    font-family: var(--font-numbers);
-    margin-bottom: 1rem;
-}
-
-/* =========================================================================
-   9. ABOUT US
-   ========================================================================= */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.about-image {
-    flex: 1;
-}
-.image-placeholder {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
-    border: 2px solid var(--accent-gold);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: var(--glow-gold);
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    padding: 2rem;
-}
-.about-text {
-    flex: 1;
-}
-.about-text h2 {
-    font-size: 2.5rem;
-    color: var(--accent-gold);
-}
-.about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-.amenities {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 1rem;
-}
-.amenities span {
-    background: var(--bg-secondary);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid var(--border-subtle);
-}
-
-/* =========================================================================
-   10. FAMOUS PLACES
-   ========================================================================= */
-.places-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto 3rem auto;
-}
-.place-card {
-    background: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid var(--border-subtle);
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-.place-card .micro-link {
-    font-size: 0.8rem;
-    color: var(--accent-saffron);
-    display: inline-block;
-    margin-top: 10px;
-}
-.places-cta {
-    text-align: center;
-    background: rgba(245, 166, 35, 0.05);
-    padding: 3rem;
-    border-radius: 20px;
-    border: 1px solid rgba(245, 166, 35, 0.2);
-    max-width: 800px;
-    margin: 0 auto;
-}
-.places-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-/* =========================================================================
-   11. TESTIMONIALS
-   ========================================================================= */
-.test-scroll-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-.test-scroll-container::-webkit-scrollbar { display: none; }
-
-.test-cards {
-    display: flex;
-    gap: 2rem;
-    padding: 1rem;
-}
-.test-card {
-    flex: 0 0 350px;
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid rgba(245, 166, 35, 0.2);
-}
-.test-card .stars {
-    margin-bottom: 1rem;
-}
-.test-card .quote {
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
-}
-.test-card .reviewer {
-    color: var(--accent-gold);
-    font-weight: 600;
-}
-.test-card .reviewer small {
-    color: var(--text-muted);
+    font-family: var(--font-body);
     font-weight: normal;
 }
 
-/* =========================================================================
-   12. TERMS & CONDITIONS (Accordion)
-   ========================================================================= */
-/* =========================================================================
-   12. TERMS & CONDITIONS
-   ========================================================================= */
-.terms-card {
-    background: var(--bg-secondary);
-    padding: 3rem;
-    border-radius: 20px;
+.fleet-card .price-call {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 2.2rem;
+    font-weight: 700;
+    padding: 0.8rem 0;
+    font-family: var(--font-heading);
+}
+
+.fleet-card .features {
+    text-align: left;
+    margin-bottom: 2.5rem;
+    /* LEARNING TIP: Swapped indigo-tinted list container background with pure obsidian-glass */
+    background: rgba(10, 10, 15, 0.4);
+    padding: 1.2rem;
+    border-radius: 12px;
     border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-sm);
+}
+
+.fleet-card .features li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(163, 163, 194, 0.08);
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.fleet-card .features li:last-child {
+    border-bottom: none;
+}
+
+.fleet-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* -------------------------------------------------------------------------
+   10. TOUR PACKAGES SECTION (Yatra Cards)
+   ------------------------------------------------------------------------- */
+.tours {
+    background: var(--bg-primary);
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tour-card {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--shadow-royal);
+}
+
+.tour-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
+}
+
+.tour-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-bottom: 1px solid rgba(255, 184, 0, 0.15);
+}
+
+.tour-card:hover .tour-img {
+    transform: scale(1.08);
+}
+
+.tour-content {
+    padding: 1.8rem;
+}
+
+.pill-badge {
+    background: rgba(255, 184, 0, 0.08);
+    color: var(--accent-gold);
+    border: 1px solid var(--border-gold);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tour-content h3 {
+    margin-bottom: 0.6rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.tour-content .route {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+}
+
+.tour-price {
+    font-size: 2rem;
+    color: var(--accent-gold);
+    font-family: var(--font-numbers);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------
+   11. ABOUT US SECTION
+   ------------------------------------------------------------------------- */
+.about {
+    background: radial-gradient(circle at bottom right, #13131C 0%, var(--bg-primary) 70%);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.about-image {
+    flex: 1.1;
+    position: relative;
+}
+
+.about-image img {
+    border: 1px solid var(--border-gold) !important;
+    box-shadow: var(--shadow-royal), var(--glow-gold) !important;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2.6rem;
+    background: var(--accent-gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.08rem;
+    color: var(--text-muted);
+}
+
+.features-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feat-item {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* -------------------------------------------------------------------------
+   12. FAMOUS PLACES GRID (Ujjain Sthal)
+   ------------------------------------------------------------------------- */
+.places {
+    /* LEARNING TIP: Transitioned from solid background to a sleek radial gradient matching
+       our Premium Obsidian Jet Black & Carbon Dark Gray base. Moving this from inline HTML styles
+       to the global stylesheet promotes DRY (Don't Repeat Yourself) styling principles. */
+    background: radial-gradient(circle at bottom center, var(--bg-secondary) 0%, var(--bg-primary) 85%);
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+}
+
+.place-card {
+    background: var(--bg-secondary);
+    padding: 1.8rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-subtle);
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.place-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-4px);
+    box-shadow: var(--glow-gold);
+}
+
+.place-card .micro-link {
+    font-size: 0.82rem;
+    color: var(--accent-saffron);
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.places-cta {
+    text-align: center;
+    /* LEARNING TIP: Replaced indigo-blue background with carbon-slate semi-transparency */
+    background: rgba(27, 27, 38, 0.55);
+    padding: 3.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--border-gold);
+    max-width: 850px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-inner-gold);
+}
+
+.places-cta p {
+    font-size: 1.3rem;
+    margin-bottom: 1.8rem;
+    color: var(--text-primary);
+}
+
+/* -------------------------------------------------------------------------
+   13. TESTIMONIALS SECTION
+   ------------------------------------------------------------------------- */
+.testimonials {
+    background: radial-gradient(circle at top left, #13131C 0%, var(--bg-primary) 70%);
+}
+
+.testimonial-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.2rem;
+    padding: 0.5rem;
+}
+
+.test-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.8rem 2.2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-royal);
+    transition: all 0.4s ease;
+}
+
+.test-card:hover {
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
+    transform: translateY(-5px);
+}
+
+/* Glowing Gold Rating Stars */
+.test-card .stars {
+    margin-bottom: 1.2rem;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    text-shadow: 0 0 10px rgba(255, 184, 0, 0.6);
+}
+
+.test-card .quote {
+    font-style: italic;
+    margin-bottom: 1.8rem;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.test-card .reviewer {
+    color: var(--accent-gold);
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.test-card .reviewer small {
+    color: var(--text-muted);
+    font-weight: normal;
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+}
+
+/* -------------------------------------------------------------------------
+   14. TERMS & CONDITIONS (Collapsible Accordion Styles)
+   ------------------------------------------------------------------------- */
+.terms {
+    background: var(--bg-primary);
+}
+
+.terms-card {
+    background: var(--bg-secondary);
+    padding: 3.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-inner-gold);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .terms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
+
 .terms-item {
     display: flex;
     gap: 1.2rem;
     align-items: flex-start;
-    padding: 1.5rem;
-    background: var(--bg-primary);
-    border-radius: 12px;
+    padding: 1.8rem;
+    /* LEARNING TIP: Upgraded terms item background card layer from indigo to obsidian tint */
+    background: rgba(10, 10, 15, 0.5);
+    border-radius: 16px;
     border: 1px solid var(--border-subtle);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .terms-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-    border-color: var(--accent-saffron);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
+    border-color: var(--accent-gold);
 }
+
+/* Metallic Liquid-Gold Badges for T&C Items
+   LEARNING TIP: To highlight numbers cleanly in dark theme layouts, make the background a shiny gold
+   gradient with dark text, making the badge immediately legible and eye-catching. */
 .terms-num {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    color: var(--accent-saffron);
+    color: var(--bg-primary);
     font-family: var(--font-numbers);
-    background: rgba(243, 156, 18, 0.1);
-    padding: 4px 8px;
-    border-radius: 6px;
+    background: var(--accent-gold-gradient);
+    padding: 6px 12px;
+    border-radius: 8px;
     line-height: 1;
+    box-shadow: 0 0 10px rgba(255, 184, 0, 0.25);
 }
+
 .terms-text {
-    font-size: 0.95rem;
-    color: var(--text-primary);
-    line-height: 1.5;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    line-height: 1.55;
     margin: 0;
 }
 
-/* =========================================================================
-   13. CONTACT
-   ========================================================================= */
+/* -------------------------------------------------------------------------
+   15. CONTACT & INTERACTIVE MAP
+   ------------------------------------------------------------------------- */
+.contact {
+    background: radial-gradient(circle at bottom center, #13131C 0%, var(--bg-primary) 75%);
+}
+
 .contact-container {
     display: flex;
-    gap: 4rem;
+    gap: 5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .contact-info {
     flex: 1;
 }
+
 .info-card {
     background: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: 10px;
+    padding: 1.8rem;
+    border-radius: 15px;
     border: 1px solid var(--border-subtle);
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-.contact-form {
-    flex: 1;
-    background: var(--bg-secondary);
-    padding: 2.5rem;
-    border-radius: 20px;
-    border: 1px solid var(--accent-gold);
-}
-.contact-form h3 {
-    margin-bottom: 1.5rem;
-    color: var(--accent-gold);
-}
-.contact-form input, .contact-form select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    background: var(--bg-primary);
-    border: 1px solid var(--border-subtle);
-    border-radius: 8px;
-    color: var(--text-primary);
-    font-family: var(--font-body);
+    margin-bottom: 1.2rem;
+    font-size: 1.12rem;
+    font-weight: 500;
 }
 
-/* =========================================================================
-   14. FOOTER
-   ========================================================================= */
-.footer {
-    background: var(--bg-secondary);
-    padding: 5rem 5% 2rem 5%;
-    border-top: 1px solid var(--border-subtle);
-    box-shadow: 0 -5px 25px rgba(0,0,0,0.02);
+.info-card a {
+    color: var(--accent-gold);
+    font-weight: 600;
 }
+
+.info-card a:hover {
+    color: var(--accent-saffron);
+}
+
+.contact-form {
+    flex: 1;
+    background: var(--glass-background);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
+}
+
+.contact-form h3 {
+    margin-bottom: 1.8rem;
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.8rem;
+}
+
+.contact-form input, .contact-form select {
+    width: 100%;
+    padding: 13px 12px;
+    margin-bottom: 16px;
+    /* LEARNING TIP: Standardized contact form inputs to match the homepage obsidian-glass layer */
+    background: rgba(10, 10, 15, 0.7);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form select:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    /* LEARNING TIP: Transitioned the contact form inputs to use the same carbon-slate background 
+       tokens, creating a unified interactive experience across the booking card and the contact portal. */
+    background: var(--bg-tertiary);
+    box-shadow: 0 0 15px var(--accent-gold-glow), var(--shadow-inner-gold);
+}
+
+/* -------------------------------------------------------------------------
+   16. FOOTER
+   ------------------------------------------------------------------------- */
+.footer {
+    background: #05050c;
+    padding: 6rem 8% 3rem 8%;
+    border-top: 1px solid var(--border-gold);
+}
+
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3.5rem;
     max-width: 1400px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 4rem auto;
 }
+
 .footer-col h4 {
-    color: var(--accent-saffron);
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
+    color: var(--accent-gold);
+    margin-bottom: 1.8rem;
+    font-size: 1.25rem;
     font-family: var(--font-heading);
+    font-weight: 700;
+    border-left: 3px solid var(--accent-saffron);
+    padding-left: 10px;
 }
+
 .footer-col ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.9rem;
 }
+
 .footer-col ul li a {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
+
 .footer-col ul li a:hover {
-    color: var(--accent-saffron);
-    padding-left: 5px;
+    color: var(--accent-gold);
+    padding-left: 6px;
 }
+
 .footer-col p {
     color: var(--text-muted);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.9rem;
     font-size: 0.95rem;
 }
+
+.footer-col p a {
+    color: var(--text-primary);
+}
+
+.footer-col p a:hover {
+    color: var(--accent-gold);
+}
+
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 2.5rem;
     border-top: 1px solid var(--border-subtle);
     color: var(--text-muted);
     font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
-/* =========================================================================
-   15. RESPONSIVE QUERIES
-   ========================================================================= */
+/* -------------------------------------------------------------------------
+   16. SUB-PAGE HERO & BREADCRUMBS
+   LEARNING TIP: Creating a unified sub-hero layout makes code for subpages
+   extremely clean. Instead of recreating massive layouts, subpages share the
+   header, starry sky overlay, and breadcrumbs to preserve context for the user.
+   ------------------------------------------------------------------------- */
+.sub-hero {
+    height: 40vh;
+    min-height: 280px;
+    /* LEARNING TIP: Swapped the hardcoded slate-indigo #1A1A26 in the sub-hero with our sleek Carbon Dark Gray variable */
+    background: radial-gradient(circle at 50% 50%, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.sub-hero .hero-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    z-index: 10;
+}
+
+.sub-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    background: var(--accent-gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+    /* LEARNING TIP: Swapped indigo-blue backdrop with a sleek carbon-slate blend */
+    background: rgba(27, 27, 38, 0.5);
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1px solid var(--border-subtle);
+}
+
+.breadcrumbs a {
+    color: var(--text-muted);
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent-gold);
+}
+
+.breadcrumbs span {
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+}
+
+/* -------------------------------------------------------------------------
+   17. RESPONSIVE MEDIA QUERIES (Mobile and Tablet Optimizations)
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    section {
+        padding: 5rem 6%;
+    }
+    
+    .nav-container {
+        padding: 1.2rem 6%;
+    }
+    
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+}
+
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
-        padding-top: 2rem;
+        gap: 3.5rem;
+        padding-top: 3rem;
     }
-    .hero-text h1 {
-        font-size: 3rem;
+    
+    .hero-text {
+        max-width: 100%;
     }
+    
     .hero-ctas {
         justify-content: center;
     }
+    
     .trust-micro {
         justify-content: center;
     }
+    
+    .hero-booking {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .booking-card {
+        max-width: 550px;
+    }
+    
     .about-container, .contact-container {
         flex-direction: column;
+        gap: 3.5rem;
+    }
+    
+    .about-image {
+        width: 100%;
+        max-width: 550px;
+        margin: 0 auto;
     }
 }
 
+/* -------------------------------------------------------------------------
+   10. FLOATING DYNAMIC THEME TOGGLER WIDGET
+   -------------------------------------------------------------------------
+   LEARNING TIP: Using position: fixed keeps this button floating on top of the 
+   viewport. The cubic-bezier transition creates a bouncy, organic feel when the
+   user hovers over it. The z-index is set to 9999 to guarantee it sits above
+   all cards, backgrounds, and images.
+   ------------------------------------------------------------------------- */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-gold);
+    color: var(--accent-gold);
+    box-shadow: var(--shadow-royal), var(--glow-gold);
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.12) rotate(20deg);
+    background: var(--accent-gold-gradient);
+    color: #101115; /* High contrast dark color for icon inside gold background */
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-royal), 0 0 25px rgba(255, 184, 0, 0.45);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.9) rotate(-15deg);
+}
+
+.theme-toggle-btn svg, .theme-toggle-btn i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.2;
+    transition: transform 0.4s ease;
+}
+
 @media (max-width: 768px) {
-    /* Navbar Mobile Menu */
+    section {
+        padding: 4rem 5%;
+    }
+
+    /* Navbar Slide-in Overlay for Mobile Devices */
     .nav-links {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 75px;
         flex-direction: column;
-        background: var(--bg-secondary);
+        /* LEARNING TIP: Upgraded mobile menu glass slide-in from navy-indigo to premium solid Obsidian Black */
+        background: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(25px);
         width: 100%;
+        height: calc(100vh - 75px);
         text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
-        padding: 2rem 0;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        padding: 3rem 0;
+        gap: 2rem;
+        border-top: 1px solid rgba(255, 184, 0, 0.15);
     }
+    
     .nav-links.active {
         left: 0;
     }
+    
     .mobile-only-cta {
         display: block;
-        margin-top: 1rem;
+        width: 80%;
+        margin: 1.5rem auto 0 auto;
     }
+    
     .nav-right .btn-primary {
-        display: none; /* Hide top call button on mobile, let hamburger take space */
+        display: none; /* Hide primary call button in top bar on smaller viewports */
     }
+    
     .hamburger {
         display: flex;
     }
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
+    
+    /* Cross icon transformations for Hamburger on click state */
+    .hamburger.active .bar:nth-child(2) { 
+        opacity: 0; 
+    }
+    .hamburger.active .bar:nth-child(1) { 
+        transform: translateY(9px) rotate(45deg); 
+    }
+    .hamburger.active .bar:nth-child(3) { 
+        transform: translateY(-9px) rotate(-45deg); 
+    }
+    
     .hero {
-        height: auto;
-        padding-bottom: 5rem;
+        min-height: auto;
+        padding-bottom: 4rem;
+        padding-top: 110px;
     }
+    
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
+    
     .form-row {
         flex-direction: column;
+        gap: 15px;
     }
+    
     .trust-bar {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2.5rem;
+        padding: 3rem 5%;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-form {
+        padding: 2rem;
+    }
+    
+    .terms-card {
+        padding: 2rem;
+    }
+    
+    .theme-toggle-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
     }
 }

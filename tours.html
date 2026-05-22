@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilgrimage & Tour Packages - Taxi In Ujjain | Sacred Yatra</title>
+    <meta name="description" content="Book 12 spiritual and outstation pilgrimage packages from Ujjain. Complete Ujjain Darshan, Omkareshwar Tour, 4-Dham Package, and round-trips.">
+    
+    <!-- Google Fonts for branding consistency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@700&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Early theme detection script to prevent theme flashing on load -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
+    
+    <!-- 
+      LEARNING TIP: Custom Page-Specific Styles.
+      We can add page-specific micro-interactions right here in a <style> block.
+      This keeps our main style.css modular and clean.
+    -->
+    <style>
+        /* Interactive category filter bar styling */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .filter-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-gold-gradient);
+            color: var(--bg-primary);
+            border-color: var(--accent-gold);
+            font-weight: 700;
+            box-shadow: var(--glow-gold);
+        }
+
+        /* Smooth animation classes for tour cards */
+        .tour-card {
+            transition: all 0.4s ease;
+        }
+
+        .tour-card.hidden {
+            display: none !important;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        
+        .tour-card.visible {
+            display: flex !important;
+            animation: card-fade-in 0.5s forwards;
+        }
+
+        @keyframes card-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919826157552?text=Hi%2C+I+want+to+book+a+yatra+package" target="_blank" class="floating-wa" aria-label="Book package via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.614-.087-.112-.712-.927-.712-1.77 0-.843.438-1.258.598-1.424.16-.167.348-.208.462-.208.114 0 .228 0 .324.005.105.006.246-.04.382.287.142.342.484 1.18.528 1.272.044.092.074.198.016.313-.058.116-.088.185-.175.287-.087.102-.185.215-.262.298-.088.093-.182.196-.076.377.105.181.469.774 1.004 1.252.689.615 1.27.808 1.455.898.186.09.294.075.404-.049.11-.125.474-.55.602-.738.127-.188.254-.156.417-.098.163.058 1.034.488 1.21.576.176.088.293.132.337.206.044.074.044.428-.1.833zm-3.392-10.416c-4.424 0-8.02 3.596-8.02 8.02 0 1.503.414 2.909 1.144 4.148l-1.155 4.225 4.318-1.133c1.196.671 2.57 1.054 4.025 1.054h.001c4.42 0 8.016-3.596 8.016-8.02-.001-4.424-3.596-8.024-8.029-8.024z"/></svg>
+    </a>
+
+    <!-- NAVBAR HEADER -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.webp" alt="Taxi In Ujjain Logo">
+                <span>Taxi In Ujjain</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html#taxi">Our Taxis</a></li>
+                <li><a href="tours.html" class="active">Our Tours</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-only-cta">
+                    <a href="https://wa.me/919826157552" class="btn btn-wa-ghost">💬 WhatsApp Karein</a>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <a href="tel:+919522205111" class="btn btn-primary">📞 Call Now</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SUB-HERO BANNER -->
+    <header class="sub-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Yatra & Sightseeing Packages</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span>➡️</span>
+                <span class="gold-text">Our Yatra Packages</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN MAIN CONTENT -->
+    <main>
+        
+        <!-- YATRA PACKAGES DIRECTORY -->
+        <section class="tours" id="yatra-directory">
+            <div class="section-header">
+                <h2>Choose Your Spiritual Journey</h2>
+                <p>Curated pilgrimage circuits and outstation leisure tours with professional local guides.</p>
+            </div>
+
+            <!-- 
+              LEARNING TIP: Interactive DOM Filters.
+              Clicking these buttons filters the grid dynamically using JavaScript.
+              Data attributes (data-filter) help the JS script map selections to targeted cards.
+            -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Packages</button>
+                <button class="filter-btn" data-filter="pilgrimage">🕉️ Pilgrimage</button>
+                <button class="filter-btn" data-filter="sightseeing">🏛️ Sightseeing</button>
+                <button class="filter-btn" data-filter="outstation">🚗 Outstation</button>
+                <button class="filter-btn" data-filter="airport">✈️ Airport</button>
+            </div>
+
+            <div class="tours-grid">
+                
+                <!-- Package 1: Indore Airport Drop -->
+                <div class="tour-card" data-category="airport">
+                    <img src="airport_transfer.png" alt="Indore Airport Drop" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Airport Transfer</span>
+                        <h3>Indore Airport Drop</h3>
+                        <p class="route">Ujjain City → Indore International Airport</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Punctual drop service matching your departure timetable. Fixed flat rate, toll included.</p>
+                        <div class="tour-price">₹1,560/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Indore+Airport+Drop" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 2: City Tour (Ujjain Darshan) -->
+                <div class="tour-card" data-category="sightseeing">
+                    <img src="mahakal_darshan.png" alt="City Tour (Ujjain Darshan)" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Sightseeing</span>
+                        <h3>City Tour (Ujjain Darshan)</h3>
+                        <p class="route">Mahakaleshwar, Kal Bhairav, Harsiddhi & local spots</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Comprehensive full-day city darshan guide. Covers all key historical and religious sites.</p>
+                        <div class="tour-price">₹2,500/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Ujjain+Darshan" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 3: Omkareshwar Tour -->
+                <div class="tour-card" data-category="pilgrimage">
+                    <img src="mahakal_darshan.png" alt="Omkareshwar Tour" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Pilgrimage</span>
+                        <h3>Omkareshwar Tour</h3>
+                        <p class="route">Ujjain → Omkareshwar Jyotirlinga (Round-trip)</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Sacred day-long trip to Narmada banks. Standard toll and parking charges are fully managed.</p>
+                        <div class="tour-price">₹3,500/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Omkareshwar+Tour" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 4: Bhopal Tour -->
+                <div class="tour-card" data-category="outstation">
+                    <img src="airport_transfer.png" alt="Bhopal Tour" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Outstation</span>
+                        <h3>Bhopal Tour</h3>
+                        <p class="route">Ujjain → Bhopal Capital City (One-way / Return)</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Travel safely to the city of lakes in a premium high-speed sedan. Driver allowance included.</p>
+                        <div class="tour-price">₹5,200/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Bhopal+Tour" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 5: Sanchi Tour -->
+                <div class="tour-card" data-category="sightseeing">
+                    <img src="airport_transfer.png" alt="Sanchi Tour" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Sightseeing</span>
+                        <h3>Sanchi Buddhist Stupas</h3>
+                        <p class="route">Ujjain → Sanchi Heritage Stupa (Day Trip)</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Explore World Heritage Stupas of Sanchi. Ideal for history lovers and archaeological tours.</p>
+                        <div class="tour-price">₹6,000/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Sanchi+Tour" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 6: Pachmarhi Tour -->
+                <div class="tour-card" data-category="outstation">
+                    <img src="airport_transfer.png" alt="Pachmarhi Tour" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Outstation</span>
+                        <h3>Pachmarhi Hill Station</h3>
+                        <p class="route">Ujjain → Pachmarhi Queen of Satpura (3-Day Round)</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Tour the scenic waterfalls, caves, and viewpoints. Multi-day tourist permit and driver lodging sorted.</p>
+                        <div class="tour-price">₹9,000/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Pachmarhi+Tour" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 7: Maheshwar Tour -->
+                <div class="tour-card" data-category="pilgrimage">
+                    <img src="mahakal_darshan.png" alt="Maheshwar Tour" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Pilgrimage</span>
+                        <h3>Maheshwar Ghats Tour</h3>
+                        <p class="route">Ujjain → Maheshwar Ahilya Fort (Day trip)</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Visit the majestic Maheshwar palace, temples, and river ghats. Excellent for textile enthusiasts.</p>
+                        <div class="tour-price">₹4,500/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Maheshwar+Tour" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 8: Mandu Tour -->
+                <div class="tour-card" data-category="sightseeing">
+                    <img src="airport_transfer.png" alt="Mandu Tour" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Sightseeing</span>
+                        <h3>Mandu Historic Citadel</h3>
+                        <p class="route">Ujjain → Jahaz Mahal & Roopmati Pavilion</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Relive legends of Baaz Bahadur & Roopmati at the ancient monsoon capital. Day tour in high luxury.</p>
+                        <div class="tour-price">₹4,500/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Mandu+Tour" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 9: Dewas Darshan -->
+                <div class="tour-card" data-category="pilgrimage">
+                    <img src="mahakal_darshan.png" alt="Dewas Darshan" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Pilgrimage</span>
+                        <h3>Dewas Chamunda Mata</h3>
+                        <p class="route">Ujjain → Dewas Tekri Hilltop Temple</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Special short round-trip to Dewas Tekri Chamunda Mata and Tulja Bhavani Darshan.</p>
+                        <div class="tour-price">₹2,000/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Dewas+Darshan" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 10: Boreshwar Mahadev -->
+                <div class="tour-card" data-category="pilgrimage">
+                    <img src="mahakal_darshan.png" alt="Boreshwar Mahadev" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Pilgrimage</span>
+                        <h3>Boreshwar Mahadev Tour</h3>
+                        <p class="route">Ujjain → Boreshwar Temple Sanctuary</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">A serene pilgrimage journey into the outskirts of Ujjain, exploring medieval temple carvings.</p>
+                        <div class="tour-price">₹2,000/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Boreshwar+Mahadev" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 11: 4-Dham Special Package -->
+                <div class="tour-card" data-category="pilgrimage">
+                    <img src="mahakal_darshan.png" alt="4-Dham Package" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Spiritual Special</span>
+                        <h3>4-Dham Pilgrimage Circuit</h3>
+                        <p class="route">Omkareshwar + Maheshwar + Mamleshwar + Shani Shingnapur</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">The holy quad-circuit covering four primary river temples. Tailored for families and elder comfort.</p>
+                        <div class="tour-price">₹5,500/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+4+Dham+Package" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+                <!-- Package 12: Airport Round Trip -->
+                <div class="tour-card" data-category="airport">
+                    <img src="airport_transfer.png" alt="Airport Round Trip" class="tour-img">
+                    <div class="tour-content">
+                        <span class="pill-badge">Airport Special</span>
+                        <h3>Airport Round Trip</h3>
+                        <p class="route">Indore Airport → Ujjain Darshan → Indore Airport</p>
+                        <p class="muted-text" style="font-size: 0.92rem; margin-bottom: 1.2rem;">Pickup at flight landing, full-day local tour, and safe drop-back to flight terminal. Ultimate convenience.</p>
+                        <div class="tour-price">₹3,600/-</div>
+                        <a href="https://wa.me/919826157552?text=Book+Airport+Round+Trip" class="link-saffron">Book This Package →</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dynamic Destination Booking Invitation -->
+        <section class="places" id="places">
+            <div class="places-cta">
+                <p>Looking for a custom pilgrimage itinerary or multi-city outstation plan?</p>
+                <p style="font-size: 1.05rem; color: var(--text-muted); margin-top: -1rem; margin-bottom: 2rem;">Our travel coordinators will prepare your route sheet, driver details, and fixed fare estimates in minutes.</p>
+                <a href="https://wa.me/919826157552?text=Plan+My+Custom+Route" class="btn btn-primary">Plan My Custom Tour Route</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER COMPONENT -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="logo.webp" alt="Taxi In Ujjain Logo">
+                    <span>Taxi In Ujjain</span>
+                </div>
+                <p>Ujjain's Trusted Cab Service Since 2001</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="services.html#taxi">Our Taxis</a></li>
+                    <li><a href="tours.html">Our Tours</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tour Destinations</h4>
+                <ul>
+                    <li>Omkareshwar</li>
+                    <li>Indore Airport</li>
+                    <li>Bhopal</li>
+                    <li>Pachmarhi</li>
+                    <li>Maheshwar</li>
+                    <li>Mandu</li>
+                    <li>Sanchi</li>
+                    <li>Dewas</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📞 <a href="tel:+919522205111">9522205111</a></p>
+                <p>📱 <a href="https://wa.me/919826157552">9826157552 (WhatsApp)</a></p>
+                <p>📧 <a href="mailto:taxiinujjain.in@gmail.com">taxiinujjain.in@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Taxi In Ujjain. All rights reserved. | Powered by Heerova Solution</p>
+        </div>
+    </footer>
+
+    <!-- 
+      LEARNING TIP: Page-Specific JavaScript.
+      Adding a small script block at the end of the page handles the filter logic locally,
+      avoiding global JS clutter. Here is how dynamic categories work!
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const tourCards = document.querySelectorAll('.tour-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove 'active' class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add 'active' class to this clicked button
+                    button.classList.add('active');
+
+                    // Get selected category
+                    const selectedCategory = button.getAttribute('data-filter');
+
+                    // Filter cards
+                    tourCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                            card.classList.remove('hidden');
+                            card.classList.add('visible');
+                        } else {
+                            card.classList.remove('visible');
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- Global interactions script (hamburger menu, sticky navbar, etc.) -->
+    <script src="script.js"></script>
+</body>
+</html>

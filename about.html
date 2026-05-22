@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Taxi In Ujjain | Professional Cab Services Since 2001</title>
+    <meta name="description" content="Discover the legacy of Taxi In Ujjain. Providing reliable, sanitized, and professional local & outstation taxi services for Mahakal Darshan since 2001.">
+    
+    <!-- 
+      LEARNING TIP: Web typography loading.
+      We connect to Google Fonts to fetch high-end editorial fonts:
+      - 'Yatra One': Sacred, heritage font with a spiritual, royal feel.
+      - 'Playfair Display': Editorial serif font, excellent for premium headers.
+      - 'DM Sans': High readability sans-serif for clean, responsive body text.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@700&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Early theme detection script to prevent theme flashing on load -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- 
+      LEARNING TIP: Floating WhatsApp Call To Action (CTA).
+      This floating badge uses a pulsating animation defined in style.css.
+      Positioning it as 'fixed' ensures it remains accessible on any scroll depth.
+    -->
+    <a href="https://wa.me/919826157552?text=Hi%2C+I+want+to+know+more+about+your+cabs" target="_blank" class="floating-wa" aria-label="Chat via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.614-.087-.112-.712-.927-.712-1.77 0-.843.438-1.258.598-1.424.16-.167.348-.208.462-.208.114 0 .228 0 .324.005.105.006.246-.04.382.287.142.342.484 1.18.528 1.272.044.092.074.198.016.313-.058.116-.088.185-.175.287-.087.102-.185.215-.262.298-.088.093-.182.196-.076.377.105.181.469.774 1.004 1.252.689.615 1.27.808 1.455.898.186.09.294.075.404-.049.11-.125.474-.55.602-.738.127-.188.254-.156.417-.098.163.058 1.034.488 1.21.576.176.088.293.132.337.206.044.074.044.428-.1.833zm-3.392-10.416c-4.424 0-8.02 3.596-8.02 8.02 0 1.503.414 2.909 1.144 4.148l-1.155 4.225 4.318-1.133c1.196.671 2.57 1.054 4.025 1.054h.001c4.42 0 8.016-3.596 8.016-8.02-.001-4.424-3.596-8.024-8.029-8.024z"/></svg>
+    </a>
+
+    <!-- 
+      LEARNING TIP: The Navigation Header.
+      For the multi-page structure, we keep this header exactly matching.
+      Note that navigation links are relative (e.g. index.html) instead of hashes (#)
+      to allow users to jump between pages seamlessly.
+    -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.webp" alt="Taxi In Ujjain Logo">
+                <span>Taxi In Ujjain</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html#taxi">Our Taxis</a></li>
+                <li><a href="tours.html">Our Tours</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-only-cta">
+                    <a href="https://wa.me/919826157552" class="btn btn-wa-ghost">💬 WhatsApp Karein</a>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <a href="tel:+919522205111" class="btn btn-primary">📞 Call Now</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+      LEARNING TIP: Sub-Hero Banners.
+      Instead of full-screen heights (100vh) which we use on the homepage,
+      subpages use a shorter banner height (40vh) to get right into the content.
+      It features the royal twilight indigo radial sky background and breadcrumbs.
+    -->
+    <header class="sub-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>About Our Agency</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span>➡️</span>
+                <span class="gold-text">About Us</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE CONTAINER -->
+    <main>
+        
+        <!-- LEGACY & HISTORY SECTION -->
+        <section class="about" id="history">
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- Premium cab fleet mockup image border set beautifully in style.css -->
+                    <img src="premium_cab_fleet.png" alt="Premium Taxi Fleet in Ujjain" style="width: 100%; border-radius: 20px; box-shadow: var(--glow-gold); border: 2px solid var(--accent-gold); max-height: 400px; object-fit: cover;">
+                </div>
+                <div class="about-text">
+                    <h2>Ujjain's Pioneer Taxi Network — Since 2001</h2>
+                    <p>For more than two decades, <strong>Taxi In Ujjain</strong> has served as a bridge of comfort and trust for tourists, pilgrims, and residents alike. We established our travel network with a simple goal: to elevate taxi services in central India to premium, royal levels, while maintaining extreme transparency and down-to-earth hospitality.</p>
+                    <p>Whether you are entering the holy bounds of Ujjain for <em>Mahakaleshwar Jyotirlinga Darshan</em>, planning a peaceful trip to <em>Omkareshwar</em>, or setting off for Indore Airport, our professional fleet is ready to serve you 24x7.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          LEARNING TIP: The Interactive Trust Bar.
+          By placing this element here, the Intersection Observer in script.js will automatically 
+          detect when the user scrolls here, and trigger the numbers counting animation programmatically!
+        -->
+        <section class="trust-bar" style="margin: 0 auto; max-width: 1400px; border-radius: 20px;">
+            <div class="stat">
+                <span class="counter gold-text" data-target="25">0</span><span class="gold-text">+</span>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat">
+                <span class="counter gold-text" data-target="15000">0</span><span class="gold-text">+</span>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat">
+                <span class="counter gold-text" data-target="284">0</span><span class="gold-text">+</span>
+                <p>Google Reviews</p>
+            </div>
+            <div class="stat">
+                <span class="counter gold-text" data-target="45">0</span><span class="gold-text">+</span>
+                <p>Premium Fleet</p>
+            </div>
+        </section>
+
+        <!-- AMENITIES & PREMIUM EXPERIENCE CARDS -->
+        <section class="services" id="amenities">
+            <div class="section-header">
+                <h2>Why Travel With Us?</h2>
+                <p>Every journey is crafted to feel premium, safe, and comfortable.</p>
+            </div>
+            
+            <div class="services-grid">
+                
+                <!-- Sanitized & Clean Cabs -->
+                <div class="service-card">
+                    <div class="icon">✨</div>
+                    <h3>Premium Hygiene</h3>
+                    <p>All cars in our fleet undergo absolute cleaning and sanitation before every single booking. Ride in refreshing luxury.</p>
+                </div>
+
+                <!-- Verified Devout Drivers -->
+                <div class="service-card">
+                    <div class="icon">🕉️</div>
+                    <h3>Pilgrim-Friendly Drivers</h3>
+                    <p>Our drivers are polite, professional, and possess complete local route wisdom. They behave as helpful local guides for your temple visits.</p>
+                </div>
+
+                <!-- 24/7 Dispatch and Support -->
+                <div class="service-card">
+                    <div class="icon">📞</div>
+                    <h3>24x7 Royal Support</h3>
+                    <p>Have changes in your train or flight timings? Our support team is online 24 hours a day to rearrange your pickups instantly.</p>
+                </div>
+
+                <!-- Fixed Billing, No Hidden Fees -->
+                <div class="service-card">
+                    <div class="icon">💰</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>What we quote is exactly what you pay. Zero surprise costs, zero extra driver charges, and complete peace of mind.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DRIVER STANDARDS & ETHICS SECTION (Trust Card Grid) -->
+        <section class="places" id="places">
+            <div class="section-header">
+                <h2>Our Safe Carriage Standards</h2>
+                <p>We train our chauffeurs systematically to prioritize your comfort and safety.</p>
+            </div>
+            
+            <div class="places-grid">
+                <div class="place-card">🔍 Police-Verified Drivers<br><span class="muted-text" style="font-size: 0.85rem; font-weight: normal; margin-top: 8px; display: block;">100% background checks for secure traveling.</span></div>
+                <div class="place-card">🚭 Clean, Non-Smoking Cabs<br><span class="muted-text" style="font-size: 0.85rem; font-weight: normal; margin-top: 8px; display: block;">Pleasant smell, clean upholstery, and fully working AC.</span></div>
+                <div class="place-card">📍 Local Route Wisdom<br><span class="muted-text" style="font-size: 0.85rem; font-weight: normal; margin-top: 8px; display: block;">Expert navigation around Ujjain's narrow streets and highways.</span></div>
+                <div class="place-card">🛡️ Speed-Monitored Travel<br><span class="muted-text" style="font-size: 0.85rem; font-weight: normal; margin-top: 8px; display: block;">Adhering strictly to safe speed limits on toll routes.</span></div>
+            </div>
+
+            <!-- Call to Action Banner -->
+            <div class="places-cta">
+                <p>Have questions about planning your customized tour package?</p>
+                <a href="contact.html" class="btn btn-primary">💬 Contact Our Travel Desk</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 
+      LEARNING TIP: Footer Component.
+      The footer contains matching styling and direct links to subpages.
+      It helps SEO spiders index all the subpages easily, boosting your site's search visibility.
+    -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="logo.webp" alt="Taxi In Ujjain Logo">
+                    <span>Taxi In Ujjain</span>
+                </div>
+                <p>Ujjain's Trusted Cab Service Since 2001</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="services.html#taxi">Our Taxis</a></li>
+                    <li><a href="tours.html">Our Tours</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tour Destinations</h4>
+                <ul>
+                    <li>Omkareshwar</li>
+                    <li>Indore Airport</li>
+                    <li>Bhopal</li>
+                    <li>Pachmarhi</li>
+                    <li>Maheshwar</li>
+                    <li>Mandu</li>
+                    <li>Sanchi</li>
+                    <li>Dewas</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📞 <a href="tel:+919522205111">9522205111</a></p>
+                <p>📱 <a href="https://wa.me/919826157552">9826157552 (WhatsApp)</a></p>
+                <p>📧 <a href="mailto:taxiinujjain.in@gmail.com">taxiinujjain.in@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Taxi In Ujjain. All rights reserved. | Powered by Heerova Solution</p>
+        </div>
+    </footer>
+
+    <!-- Link to Javascript for mobile nav menu and animated counters -->
+    <script src="script.js"></script>
+</body>
+</html>
