@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kal Bhairav Temple - Taxi In Ujjain | Premium Cab Services</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .destination-hero {
+            height: 55vh;
+            min-height: 400px;
+            background: linear-gradient(to bottom, rgba(10,10,15,0.6), rgba(10,10,15,0.95)), url('Images/kalbheravTemple.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px 20px 20px;
+            border-bottom: 1px solid var(--border-gold);
+            position: relative;
+        }
+        
+        .dest-hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            z-index: 2;
+        }
+
+        .destination-layout {
+            max-width: 1200px;
+            margin: -40px auto 4rem auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (max-width: 900px) {
+            .destination-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main-content {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-royal);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-content h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            background: var(--accent-gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .main-content h3 {
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 15px;
+        }
+
+        .main-content p {
+            font-size: 1.12rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Sticky Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: max-content;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+
+        .booking-card {
+            background: var(--glass-background);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-royal), var(--glow-gold);
+            text-align: center;
+        }
+
+        .booking-card h3 {
+            color: var(--accent-gold);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .booking-btn-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .quick-facts {
+            margin-top: 2rem;
+            text-align: left;
+            background: rgba(10, 10, 15, 0.6);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-subtle);
+        }
+        
+        .fact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .fact-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .fact-icon {
+            font-size: 1.4rem;
+            background: rgba(255, 184, 0, 0.1);
+            padding: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--border-gold);
+        }
+        
+        .fact-text strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+        
+        .fact-text span {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar" style="background: rgba(5,5,12,0.95); backdrop-filter: blur(10px);">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Images/logo.webp" alt="Taxi In Ujjain Logo">
+                <span>Taxi In Ujjain</span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="tours.html">Our Tours</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-only-cta">
+                    <a href="https://wa.me/919826157552" class="btn btn-wa-ghost">💬 WhatsApp</a>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <a href="tel:+919522205111" class="btn btn-primary">📞 Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="destination-hero">
+        <div class="dest-hero-content">
+            <h1 style="font-family: var(--font-heading); font-size: 3.8rem; color: #ffffff; text-shadow: 0 4px 15px rgba(0,0,0,0.8); margin: 0; line-height: 1.2;">Kal Bhairav Temple</h1>
+            <div class="breadcrumbs" style="justify-content: center; background: rgba(27, 27, 38, 0.7); border: 1px solid var(--border-subtle); padding: 8px 20px; border-radius: 30px; display: inline-flex; gap: 10px;">
+                <a href="index.html" style="color: #ffffff; text-decoration: none;">Home</a> 
+                <span style="color: #ffffff;">➡️</span> 
+                <span style="color: var(--accent-gold); font-weight: 700;">Kal Bhairav Temple</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="destination-layout">
+        <!-- LEFT COLUMN: <h3>Unique Offerings</h3><p>A unique aspect of this temple is that liquor is offered to the deity as part of the ritual worship. The priest pours the liquor into a saucer and brings it to the deity's lips.</p><h3>Guardian of the City</h3><p>It is believed that no pilgrimage to Ujjain is complete without seeking the permission and blessings of Kal Bhairav, who acts as the supreme commander of the city.</p> -->
+        <section class="main-content">
+            <h2>About Kal Bhairav Temple</h2>
+            <p>The Kal Bhairav Temple is a prominent shrine dedicated to Kal Bhairav, the fierce manifestation of Lord Shiva. He is worshipped as the guardian deity of Ujjain.</p>
+            <h3>Unique Offerings</h3><p>A unique aspect of this temple is that liquor is offered to the deity as part of the ritual worship. The priest pours the liquor into a saucer and brings it to the deity's lips.</p><h3>Guardian of the City</h3><p>It is believed that no pilgrimage to Ujjain is complete without seeking the permission and blessings of Kal Bhairav, who acts as the supreme commander of the city.</p>
+        </section>
+        
+        <!-- RIGHT COLUMN: SIDEBAR -->
+        <aside class="sidebar">
+            <div class="booking-card">
+                <h3>Plan Your Visit</h3>
+                <p>Book a comfortable cab for a hassle-free Darshan. We ensure timely pickups and local guidance.</p>
+                
+                <div class="booking-btn-stack">
+                    <a href="https://wa.me/919826157552?text=Book+cab+for+Kal Bhairav Temple" class="btn btn-wa-full">💬 Book via WhatsApp</a>
+                    <a href="tel:+919522205111" class="btn btn-primary" style="width: 100%;">📞 Call +91 9522205111</a>
+                </div>
+                
+                <div class="quick-facts">
+                    <div class="fact-item">
+                        <div class="fact-icon">🕒</div>
+                        <div class="fact-text">
+                            <strong>Temple Timings</strong>
+                            <span>5:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="fact-item">
+                        <div class="fact-icon">⏳</div>
+                        <div class="fact-text">
+                            <strong>Avg. Duration</strong>
+                            <span>1 Hour</span>
+                        </div>
+                    </div>
+                    <div class="fact-item">
+                        <div class="fact-icon">📍</div>
+                        <div class="fact-text">
+                            <strong>Location Info</strong>
+                            <span>8 KM from Station</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom" style="padding: 2rem; text-align: center; background: #05050c; border-top: 1px solid var(--border-gold);">
+            <p>&copy; 2025 Taxi In Ujjain. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
