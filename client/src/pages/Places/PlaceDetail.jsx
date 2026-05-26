@@ -41,6 +41,9 @@ export const PlaceDetail = () => {
           <img 
             src={place.img} 
             alt={place.name} 
+            width="900"
+            height="400"
+            fetchpriority="high"
             className="w-full h-full object-cover"
           />
         </div>

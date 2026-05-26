@@ -33,6 +33,9 @@ export const About = () => {
             <img 
               src="/Images/premium_cab_fleet.webp" 
               alt="Premium Taxi Fleet in Ujjain" 
+              width="640"
+              height="400"
+              loading="lazy"
               className="w-full rounded-2xl shadow-royal border-2 border-accent-gold max-h-[400px] object-cover"
             />
           </div>

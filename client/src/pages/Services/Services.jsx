@@ -105,7 +105,7 @@ export const Services = () => {
                   </span>
                 )}
                 <div>
-                  <img src={car.img} alt={car.model} className="w-full h-48 object-contain mb-6 hover:scale-105 transition-transform" />
+                  <img src={car.img} alt={car.model} width="360" height="192" loading="lazy" className="w-full h-48 object-contain mb-6 hover:scale-105 transition-transform" />
                   <span className="text-xs font-semibold text-text-muted tracking-wider uppercase block mb-1">{car.name}</span>
                   <h3 className="text-2xl font-heading font-semibold text-white mb-2">{car.model}</h3>
                   <div className="text-3xl font-heading text-accent-gold mb-6">

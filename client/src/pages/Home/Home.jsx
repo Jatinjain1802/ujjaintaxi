@@ -181,7 +181,7 @@ export const Home = () => {
                   </span>
                 )}
                 <div>
-                  <img src={car.img} alt={car.model} className="w-full h-48 object-contain mb-6 hover:scale-105 transition-transform" />
+                  <img src={car.img} alt={car.model} width="360" height="192" loading="lazy" className="w-full h-48 object-contain mb-6 hover:scale-105 transition-transform" />
                   <span className="text-xs font-semibold text-text-muted tracking-wider uppercase block mb-1">{car.name}</span>
                   <h3 className="text-2xl font-heading font-semibold text-white mb-2">{car.model}</h3>
                   <div className="text-3xl font-heading text-accent-gold mb-6">
@@ -224,7 +224,7 @@ export const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {toursData.map((tour) => (
               <div key={tour.id} className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold transition-colors duration-300">
-                <img src={tour.img} alt={tour.title} className="w-full h-48 object-cover" />
+                <img src={tour.img} alt={tour.title} width="290" height="192" loading="lazy" className="w-full h-48 object-cover" />
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
                     <span className="inline-block bg-[rgba(255,87,34,0.12)] text-accent-saffron text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
@@ -253,6 +253,9 @@ export const Home = () => {
             <img 
               src="/Images/premium_cab_fleet.webp" 
               alt="Premium Taxi Fleet in Ujjain" 
+              width="640"
+              height="400"
+              loading="lazy"
               className="w-full rounded-2xl shadow-royal border-2 border-accent-gold max-h-[400px] object-cover"
             />
           </div>
@@ -285,7 +288,7 @@ export const Home = () => {
             {placesData.map((place) => (
               <div key={place.id} className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold transition-colors duration-300">
                 <Link to={`/places/${place.slug}`}>
-                  <img src={place.img} alt={place.name} className="w-full h-40 object-cover" />
+                  <img src={place.img} alt={place.name} width="290" height="160" loading="lazy" className="w-full h-40 object-cover" />
                   <div className="p-4">
                     <h4 className="text-sm font-heading font-semibold text-white hover:text-accent-gold transition-colors">
                       {place.name}

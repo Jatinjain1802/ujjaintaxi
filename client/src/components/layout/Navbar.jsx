@@ -43,6 +43,7 @@ export const Navbar = () => {
     { name: 'Services', path: '/services' },
     { name: 'Our Taxis', path: '/services', hash: '#taxi' },
     { name: 'Our Tours', path: '/tours' },
+    { name: 'Blogs', path: '/blogs' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -69,6 +70,8 @@ export const Navbar = () => {
           <img 
             src="/Images/logo.webp" 
             alt="Taxi In Ujjain Logo" 
+            width="57"
+            height="44"
             className="h-11 w-auto drop-shadow-[0_0_8px_rgba(255,184,0,0.2)]"
           />
           <span>Taxi In Ujjain</span>
