@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-hero: "Yatra One", cursive;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-numbers: "Space Mono", monospace;
+
+  --color-bg-primary: #0A0A0F;
+  --color-bg-secondary: #13131C;
+  --color-bg-tertiary: #1B1B26;
+
+  --color-accent-gold: #FFB800;
+  --color-accent-gold-glow: rgba(255, 184, 0, 0.28);
+  --color-accent-saffron: #FF5722;
+  --color-accent-saffron-glow: rgba(255, 87, 34, 0.35);
+
+  --color-text-primary: #F8F9FA;
+  --color-text-muted: #9E9EAF;
+  --color-text-gold: #FFC72C;
+
+  --color-success-green: #00E676;
+  --color-success-green-glow: rgba(0, 230, 118, 0.35);
+  
+  --shadow-royal: 0 16px 40px rgba(0, 0, 0, 0.75);
+}
+
+/* Custom premium scrollbar mimicking the original design */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFB800;
+  border-radius: 10px;
+  border: 2px solid #0A0A0F;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5722;
+}
+
+/* Premium Animations */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
+  70% { box-shadow: 0 0 0 18px rgba(0, 230, 118, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+}
+
+.animate-wa-pulse {
+  animation: wa-pulse 2s infinite;
+}
+
+@keyframes starry-twinkle {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.85; }
+  100% { opacity: 0.6; }
+}
+
+.animate-starry-twinkle {
+  animation: starry-twinkle 8s infinite alternate ease-in-out;
+}
+
+/* Custom glow utility classes */
+.glow-gold {
+  box-shadow: 0 0 30px rgba(255, 184, 0, 0.22);
+}
+
+.glow-saffron {
+  box-shadow: 0 0 30px rgba(255, 87, 34, 0.25);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF2CC 0%, #FFB800 60%, #D69900 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-saffron-gradient {
+  background: linear-gradient(135deg, #FF8A65 0%, #FF5722 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-saffron-gradient {
+  background: linear-gradient(135deg, #FF8A65 0%, #FF5722 100%);
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #FFF2CC 0%, #FFB800 60%, #D69900 100%);
+}
