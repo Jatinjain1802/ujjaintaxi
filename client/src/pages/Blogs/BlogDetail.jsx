@@ -22,6 +22,57 @@ export const BlogDetail = () => {
   const { slug } = useParams();
   const blog = blogsData.find((b) => b.slug === slug);
 
+  // Helper function to parse markdown links: [Link Text](/url-path)
+  const parseMarkdownLinks = (text) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const result = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      const [fullMatch, linkText, url] = match;
+      const matchIndex = match.index;
+
+      // Add preceding plain text
+      if (matchIndex > lastIndex) {
+        result.push(text.substring(lastIndex, matchIndex));
+      }
+
+      // Add Link component or standard a tag
+      if (url.startsWith('http') || url.startsWith('tel:') || url.startsWith('mailto:')) {
+        result.push(
+          <a
+            key={matchIndex}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-gold hover:text-accent-saffron underline font-semibold transition-colors duration-200"
+          >
+            {linkText}
+          </a>
+        );
+      } else {
+        result.push(
+          <Link
+            key={matchIndex}
+            to={url}
+            className="text-accent-gold hover:text-accent-saffron underline font-semibold transition-colors duration-200"
+          >
+            {linkText}
+          </Link>
+        );
+      }
+
+      lastIndex = linkRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      result.push(text.substring(lastIndex));
+    }
+
+    return result.length > 0 ? result : text;
+  };
+
   // Fallback UI in case the user navigates to an invalid slug
   if (!blog) {
     return (
@@ -106,18 +157,18 @@ export const BlogDetail = () => {
                   return (
                     <div 
                       key={index} 
-                      className="bg-bg-secondary p-6 md:p-8 rounded-2xl border-l-4 border-accent-gold border-y border-r border-[rgba(158,158,175,0.12)] text-text-primary space-y-2 my-6"
+                      className="bg-bg-secondary p-6 md:p-8 rounded-2xl border-l-4 border-accent-gold border-y border-r border-[rgba(158,158,175,0.12)] text-text-primary space-y-2 my-6 font-body"
                     >
                       <p className="font-heading font-medium text-lg leading-snug">
-                        {paragraph}
+                        {parseMarkdownLinks(paragraph)}
                       </p>
                     </div>
                   );
                 }
 
                 return (
-                  <p key={index} className="text-text-muted">
-                    {paragraph}
+                  <p key={index} className="text-text-muted font-body">
+                    {parseMarkdownLinks(paragraph)}
                   </p>
                 );
               })}

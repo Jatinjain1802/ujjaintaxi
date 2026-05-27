@@ -8,7 +8,7 @@ const rawToursData = [
     price: '₹2,500/-',
     img: '/Images/mahakal.webp',
     waText: 'Book Ujjain Darshan',
-    description: 'Explore the highly ancient and sacred city of Ujjain. This package is specifically designed for pilgrims wanting a comprehensive day yatra covering all key holy temples of the city with safe, hassle-free transportation.',
+    description: 'Explore the highly ancient and sacred city of Ujjain. This package is specifically designed for pilgrims wanting a comprehensive day yatra covering all key holy temples of the city with safe, hassle-free transportation. Read our highly detailed [Ujjain Darshan Blog Guide](/blogs/ujjain-darshan-guide) for the best pilgrim secrets.',
     itinerary: [
       'Mahakaleshwar Jyotirlinga (Bhasma Aarti & General Darshan)',
       'Harsiddhi Mata Temple (one of the 51 Shaktipeeths)',
@@ -28,7 +28,7 @@ const rawToursData = [
     price: '₹3,500/-',
     img: '/Images/Omkareshwar.webp',
     waText: 'Book Omkareshwar Tour',
-    description: 'Complete day yatra to Omkareshwar Jyotirlinga, situated on the sacred Mandhata island in the Narmada River. The island shape is naturally in the holy form of the "Om" symbol.',
+    description: 'Complete day yatra to Omkareshwar Jyotirlinga, situated on the sacred Mandhata island in the Narmada River. The island shape is naturally in the holy form of the "Om" symbol. Read our dedicated [Omkareshwar Yatra Guide](/blogs/omkareshwar-darshan-guide) to plan your riverside timings and boat trips.',
     itinerary: [
       'Early morning pickup from Ujjain for Omkareshwar',
       'Narmada River Boat Ride & Sacred Snan (bath)',
@@ -47,7 +47,7 @@ const rawToursData = [
     price: '₹2,500/-',
     img: '/Images/maa-bagla-mukhi.webp',
     waText: 'Book Maa Bagla Mukhi Temple',
-    description: 'Travel to the powerful Maa Baglamukhi Temple in Nalkheda. Located on the banks of the Lakhunder river, this highly energetic temple is known for ancient tantric rituals and victorious blessings.',
+    description: 'Travel to the powerful Maa Baglamukhi Temple in Nalkheda. Located on the banks of the Lakhunder river, this highly energetic temple is known for ancient tantric rituals and victorious blessings. To understand the powerful tantric fire rituals and yellow dress customs, read our comprehensive [Maa Baglamukhi Nalkheda Blog Guide](/blogs/baglamukhi-nalkheda-guide).',
     itinerary: [
       'Depart from Ujjain to Nalkheda via comfortable AC sedan/SUV',
       'Maa Baglamukhi Temple Darshan & Rituals',
@@ -84,7 +84,7 @@ const rawToursData = [
     price: '₹3,000/-',
     img: '/Images/indore.png',
     waText: 'Book Indore City Tour',
-    description: 'Discover Indore, the cleanest city of India and the commercial capital of Madhya Pradesh. Visit majestic Maratha heritage sites like Rajwada, popular temples, and indulge in world-famous street food.',
+    description: 'Discover Indore, the cleanest city of India and the commercial capital of Madhya Pradesh. Visit majestic Maratha heritage sites like Rajwada, popular temples, and indulge in world-famous street food. Read our [Indore City Food & Transit Guide](/blogs/indore-tour-guide) to find the best street delicacies.',
     itinerary: [
       'Morning pickup from Ujjain for Indore drive',
       'Visit the magnificent Rajwada Palace (heritage landmark)',
@@ -104,7 +104,7 @@ const rawToursData = [
     price: '₹4,500/-',
     img: '/Images/Maheshwer.webp',
     waText: 'Book Maheshwar Tour',
-    description: 'Visit the peaceful temple town of Maheshwar, located on the banks of the sacred Narmada River. Explore the glorious Ahilya Fort and take in the spiritual ghat environment.',
+    description: 'Visit the peaceful temple town of Maheshwar, located on the banks of the sacred Narmada River. Explore the glorious Ahilya Fort and take in the spiritual ghat environment. Dive into the history and handloom stories in our [Maheshwar & Mandu Royal Heritage Guide](/blogs/maheshwar-mandu-heritage-guide).',
     itinerary: [
       'Depart Ujjain to Maheshwar via Indore bypass',
       'Explore Ahilya Fort & Palace Heritage Complex',
@@ -123,7 +123,7 @@ const rawToursData = [
     price: '₹4,500/-',
     img: '/Images/jahazMahal.webp',
     waText: 'Book Mandu Tour',
-    description: 'Step back in history with a trip to the ancient ruined fortress city of Mandu. Famous for its Afghan architectural heritage, romantic palaces, and historic stone gates.',
+    description: 'Step back in history with a trip to the ancient ruined fortress city of Mandu. Famous for its Afghan architectural heritage, romantic palaces, and historic stone gates. Learn more about the romantic monuments in our [Maheshwar & Mandu Royal Heritage Guide](/blogs/maheshwar-mandu-heritage-guide).',
     itinerary: [
       'Travel from Ujjain to Mandu mountain plateau',
       'Explore Jahaz Mahal (Ship Palace) & Hindola Mahal',

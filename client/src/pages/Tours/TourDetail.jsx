@@ -17,6 +17,57 @@ export const TourDetail = () => {
   const { id } = useParams();
   const tour = toursData.find((t) => t.id === id);
 
+  // Helper function to parse markdown links: [Link Text](/url-path)
+  const parseMarkdownLinks = (text) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const result = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      const [fullMatch, linkText, url] = match;
+      const matchIndex = match.index;
+
+      // Add preceding plain text
+      if (matchIndex > lastIndex) {
+        result.push(text.substring(lastIndex, matchIndex));
+      }
+
+      // Add Link component or standard a tag
+      if (url.startsWith('http') || url.startsWith('tel:') || url.startsWith('mailto:')) {
+        result.push(
+          <a
+            key={matchIndex}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-gold hover:text-accent-saffron underline font-semibold transition-colors duration-200"
+          >
+            {linkText}
+          </a>
+        );
+      } else {
+        result.push(
+          <Link
+            key={matchIndex}
+            to={url}
+            className="text-accent-gold hover:text-accent-saffron underline font-semibold transition-colors duration-200"
+          >
+            {linkText}
+          </Link>
+        );
+      }
+
+      lastIndex = linkRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      result.push(text.substring(lastIndex));
+    }
+
+    return result.length > 0 ? result : text;
+  };
+
   // Fallback UI in case the user navigates to an invalid tour id
   if (!tour) {
     return (
@@ -78,7 +129,7 @@ export const TourDetail = () => {
               <div className="bg-bg-secondary p-8 md:p-12 rounded-3xl border border-[rgba(158,158,175,0.12)] space-y-6">
                 <h3 className="text-2xl font-heading font-semibold text-text-primary">Yatra Overview</h3>
                 <p className="text-text-muted leading-relaxed text-[1.05rem]">
-                  {tour.description}
+                  {parseMarkdownLinks(tour.description)}
                 </p>
                 <p className="text-text-muted leading-relaxed text-[1.05rem]">
                   Our professional pilgrim travel desk coordinates every single pickup carefully. We promise completely sanitized AC carriages, polite drivers with extensive local route knowledge, and absolute pricing transparency with zero hidden charges.

@@ -11,6 +11,57 @@ export const PlaceDetail = () => {
   const { slug } = useParams();
   const place = placesData.find((p) => p.slug === slug);
 
+  // Helper function to parse markdown links: [Link Text](/url-path)
+  const parseMarkdownLinks = (text) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const result = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      const [fullMatch, linkText, url] = match;
+      const matchIndex = match.index;
+
+      // Add preceding plain text
+      if (matchIndex > lastIndex) {
+        result.push(text.substring(lastIndex, matchIndex));
+      }
+
+      // Add Link component or standard a tag
+      if (url.startsWith('http') || url.startsWith('tel:') || url.startsWith('mailto:')) {
+        result.push(
+          <a
+            key={matchIndex}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-gold hover:text-accent-saffron underline font-semibold transition-colors duration-200"
+          >
+            {linkText}
+          </a>
+        );
+      } else {
+        result.push(
+          <Link
+            key={matchIndex}
+            to={url}
+            className="text-accent-gold hover:text-accent-saffron underline font-semibold transition-colors duration-200"
+          >
+            {linkText}
+          </Link>
+        );
+      }
+
+      lastIndex = linkRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      result.push(text.substring(lastIndex));
+    }
+
+    return result.length > 0 ? result : text;
+  };
+
   if (!place) {
     return (
       <div className="pt-[150px] pb-24 text-center bg-bg-primary min-h-screen">
@@ -52,7 +103,7 @@ export const PlaceDetail = () => {
         <div className="bg-bg-secondary p-8 md:p-12 rounded-3xl border border-[rgba(158,158,175,0.12)] space-y-6">
           <h3 className="text-xl font-heading font-semibold text-text-primary">About the Sacred Destination</h3>
           <p className="text-text-muted leading-relaxed text-[1.05rem]">
-            {place.description}
+            {parseMarkdownLinks(place.description)}
           </p>
           <p className="text-text-muted leading-relaxed text-[1.05rem]">
             Ujjain is one of the most ancient and sacred cities in India, known for its divine energy, rich spiritual heritage, and majestic historical temples. Book a reliable taxi service with us today to travel comfortably to {place.name} and explore the sacred lands with ease.
