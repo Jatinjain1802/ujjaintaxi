@@ -6,13 +6,11 @@ import { termsData } from '../../data/terms';
 export const Terms = () => {
   return (
     <div className="bg-bg-primary min-h-screen">
-      {/* sub-hero Banner */}
       <SubHero title="Terms & Conditions" breadcrumb="Terms" />
 
-      {/* Main Section */}
       <main className="max-w-[1200px] mx-auto px-6 md:px-12 py-16 space-y-12">
-        <SectionHeader 
-          title="Terms & Conditions — Please Read Before Booking" 
+        <SectionHeader
+          title="Terms & Conditions - Please Read Before Booking"
           subtitle="Please read our fleet operational and booking rules carefully before confirming your ride."
         />
 
@@ -32,21 +30,21 @@ export const Terms = () => {
           </div>
         </div>
 
-        {/* CTA section at bottom */}
         <div className="text-center mt-12 bg-bg-secondary p-8 rounded-2xl border border-[rgba(158,158,175,0.12)] max-w-[600px] mx-auto space-y-4">
           <p className="text-lg font-heading font-semibold text-text-primary">Have questions about interstate permits or toll rates for Omkareshwar?</p>
           <p className="text-sm text-text-muted">Our representatives are happy to clear all doubts before you make a booking deposit.</p>
-          <a 
-            href="https://wa.me/919826157552?text=I+have+a+question+about+booking+terms" 
-            target="_blank" 
+          <a
+            href="https://wa.me/919826157552?text=I+have+a+question+about+booking+terms"
+            target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center bg-saffron-gradient text-white font-semibold rounded-full shadow-[0_4px_20px_var(--color-accent-saffron-glow)] hover:shadow-[0_8px_25px_var(--color-accent-saffron-glow)] hover:shadow-saffron hover:-translate-y-[3px] transition-all duration-400 px-7 py-3 text-[0.95rem] gap-2 cursor-pointer"
           >
-            💬 Speak To Support on WhatsApp
+            Speak To Support on WhatsApp
           </a>
         </div>
       </main>
     </div>
   );
 };
+
 export default Terms;

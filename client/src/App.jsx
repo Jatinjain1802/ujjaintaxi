@@ -9,9 +9,11 @@ import FloatingWhatsApp from './components/ui/FloatingWhatsApp';
 const Home = lazy(() => import('./pages/Home/Home'));
 const About = lazy(() => import('./pages/About/About'));
 const Services = lazy(() => import('./pages/Services/Services'));
+const Taxi = lazy(() => import('./pages/Taxi/Taxi'));
 const Tours = lazy(() => import('./pages/Tours/Tours'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 const Terms = lazy(() => import('./pages/Terms/Terms'));
+const PrivacyPolicy = lazy(() => import('./pages/Privacy/PrivacyPolicy'));
 const PlaceDetail = lazy(() => import('./pages/Places/PlaceDetail'));
 const Blogs = lazy(() => import('./pages/Blogs/Blogs'));
 const BlogDetail = lazy(() => import('./pages/Blogs/BlogDetail'));
@@ -93,10 +95,12 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/taxis" element={<Taxi />} />
               <Route path="/tours" element={<Tours />} />
               <Route path="/tours/:id" element={<TourDetail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/places/:slug" element={<PlaceDetail />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:slug" element={<BlogDetail />} />

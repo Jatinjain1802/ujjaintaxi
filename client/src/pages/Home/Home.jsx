@@ -6,6 +6,7 @@ import SectionHeader from '../../components/ui/SectionHeader';
 import Button from '../../components/ui/Button';
 import BookingForm from './components/BookingForm';
 import AnimatedCounter from './components/AnimatedCounter';
+import ScrollReveal from '../../components/ui/ScrollReveal';
 
 import { fleetData } from '../../data/fleet';
 import { toursData } from '../../data/tours';
@@ -15,7 +16,7 @@ import { termsData } from '../../data/terms';
 import { getWhatsAppLink, generateBookingMessage } from '../../utils/whatsapp';
 
 const animatedTexts = [
-  "Mahakal Darshan",
+  "Ujjain Darshan",
   "Omkareshwar Tour",
   "Maa Bagla Mukhi",
   "Dewas Darshan",
@@ -25,6 +26,14 @@ const animatedTexts = [
   "Bhopal Tour",
   "Pachmarhi Tour"
 ];
+
+const homeThemePreview = {
+  '--color-accent-gold': '#D4AF37',
+  '--color-accent-gold-glow': 'rgba(212, 175, 55, 0.2)',
+  '--color-accent-saffron': '#F2C94C',
+  '--color-accent-saffron-glow': 'rgba(242, 201, 76, 0.22)',
+  '--color-text-gold': '#D4AF37',
+};
 
 export const Home = () => {
   const [showDeferredSections, setShowDeferredSections] = useState(false);
@@ -52,7 +61,7 @@ export const Home = () => {
       timer = setTimeout(() => {
         setDisplayedText(currentFullText.substring(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
-      }, 100); // 100ms per letter typing speed
+      }, 55); // Faster typing speed for a snappier hero effect
     } else if (!isDeleting && charIndex === currentFullText.length) {
       // Pause phase: wait 2 seconds after finishing the word
       timer = setTimeout(() => {
@@ -105,81 +114,85 @@ export const Home = () => {
   };
 
   return (
-    <div className="font-body select-none">
+    <div className="font-body select-none" style={homeThemePreview}>
       
       {/* 1. HERO SECTION */}
       <header className="relative min-h-screen bg-[radial-gradient(circle_at_10%_20%,#FFFFFF_0%,#FCFBFA_40%,#F5EFE6_100%)] flex items-center pt-[120px] pb-16 overflow-hidden">
         {/* Starry Overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,87,34,0.05)_1.2px,transparent_1.2px),radial-gradient(circle_at_15%_25%,rgba(255,184,0,0.08)_1.2px,transparent_1.2px)] opacity-80 pointer-events-none animate-starry-twinkle" />
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(242,201,76,0.06)_1.2px,transparent_1.2px),radial-gradient(circle_at_15%_25%,rgba(212,175,55,0.1)_1.2px,transparent_1.2px)] opacity-80 pointer-events-none animate-starry-twinkle" />
 
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
           
           {/* HERO LEFT TEXT */}
           <div className="flex-1 max-w-[620px]">
-            <span className="inline-block text-text-gold border border-[rgba(255,184,0,0.22)] px-[18px] py-1.5 rounded-full text-xs font-medium tracking-widest mb-8 bg-[rgba(255,184,0,0.06)] shadow-[inset_0_0_15px_rgba(255,184,0,0.1)]">
-              ✦ Ujjain's Most Trusted Since 2001
-            </span>
-            <div className="min-h-[140px] md:min-h-[180px] flex items-center">
-              <h1 className="font-hero text-[3.8rem] md:text-[4.8rem] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent-saffron to-text-gold mb-6 select-text">
-                {displayedText}
-                <span className="text-accent-saffron ml-1.5 inline-block animate-cursor-blink font-light select-none">|</span>
-              </h1>
-            </div>
-            <p className="text-lg md:text-xl text-text-muted mb-10 tracking-wide">
-              Local • Outstation • Airport • Pilgrimage Tours
-            </p>
-            <div className="flex flex-wrap gap-4 mb-10">
-              <Button variant="primary" href="tel:+919522205111">
-                <FiPhone /> Call Now — 9522205111
-              </Button>
-              <Button variant="wa-ghost" href={getWhatsAppLink("Namaste, I want to inquire about Ujjain Taxi booking.")}>
-                <FiMessageCircle /> WhatsApp Karein
-              </Button>
-            </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-3 text-xs md:text-sm text-text-muted border-t border-[rgba(158,158,175,0.12)] pt-6">
-              <span>⭐ 4.9 Rating</span>
-              <span>284 Reviews</span>
-              <span>24x7 Available</span>
-              <span>AC Cabs</span>
-            </div>
+            <ScrollReveal direction="left" duration={900}>
+              <span className="inline-block text-text-gold border border-[rgba(212,175,55,0.28)] px-[18px] py-1.5 rounded-full text-xs font-medium tracking-widest mb-8 bg-[rgba(242,201,76,0.12)] shadow-[inset_0_0_15px_rgba(212,175,55,0.18)]">
+                ✦ Ujjain's Most Trusted Since 2001
+              </span>
+              <div className="min-h-[140px] md:min-h-[180px] flex items-center">
+                <h1 className="font-hero text-[3.8rem] md:text-[4.8rem] leading-[1.1] text-transparent bg-clip-text bg-[linear-gradient(90deg,#5B1E2D_0%,#D8891C_52%,#D4AF37_100%)] mb-6 select-text">
+                  {displayedText}
+                  <span className="text-accent-saffron ml-1.5 inline-block animate-cursor-blink font-light select-none">|</span>
+                </h1>
+              </div>
+              <p className="text-lg md:text-xl text-text-muted mb-10 tracking-wide">
+                Local • Outstation • Airport • Pilgrimage Tours
+              </p>
+              <div className="flex flex-wrap gap-4 mb-10">
+                <Button variant="primary" href="tel:+919522205111">
+                  <FiPhone /> Call Now — 9522205111
+                </Button>
+                <Button variant="wa-ghost" href={getWhatsAppLink("Namaste, I want to inquire about Ujjain Taxi booking.")}>
+                  <FiMessageCircle /> WhatsApp Karein
+                </Button>
+              </div>
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-xs md:text-sm text-text-muted border-t border-[rgba(158,158,175,0.12)] pt-6">
+                <span>⭐ 4.9 Rating</span>
+                <span>284 Reviews</span>
+                <span>24x7 Available</span>
+                <span>AC Cabs</span>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* HERO RIGHT FORM */}
           <div className="flex-1 flex justify-center lg:justify-end w-full">
-            <BookingForm />
+            <ScrollReveal direction="right" duration={900}>
+              <BookingForm />
+            </ScrollReveal>
           </div>
 
         </div>
       </header>
 
       {/* 2. TRUST BAR */}
-      <section className="bg-bg-secondary py-12 border-t border-b border-[rgba(255,184,0,0.22)] shadow-[inset_0_0_15px_rgba(255,184,0,0.1)]">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-x divide-[rgba(255,184,0,0.22)]">
+      <section className="bg-bg-secondary py-12 border-t border-b border-[rgba(212,175,55,0.28)] shadow-[inset_0_0_15px_rgba(212,175,55,0.14)]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-x divide-[rgba(212,175,55,0.28)]">
           <div>
             <div className="flex items-center justify-center">
               <AnimatedCounter target={25} />
-              <span className="text-[3rem] font-bold text-accent-gold font-numbers text-gold-gradient">+</span>
+              <span className="text-[3rem] font-bold text-[#D4AF37] font-numbers">+</span>
             </div>
             <p className="text-[0.75rem] text-text-muted font-semibold tracking-[1.5px] uppercase mt-2">Years Experience</p>
           </div>
           <div>
             <div className="flex items-center justify-center">
               <AnimatedCounter target={15000} />
-              <span className="text-[3rem] font-bold text-accent-gold font-numbers text-gold-gradient">+</span>
+              <span className="text-[3rem] font-bold text-[#D4AF37] font-numbers">+</span>
             </div>
             <p className="text-[0.75rem] text-text-muted font-semibold tracking-[1.5px] uppercase mt-2">Happy Customers</p>
           </div>
           <div>
             <div className="flex items-center justify-center">
               <AnimatedCounter target={284} />
-              <span className="text-[3rem] font-bold text-accent-gold font-numbers text-gold-gradient">+</span>
+              <span className="text-[3rem] font-bold text-[#D4AF37] font-numbers">+</span>
             </div>
             <p className="text-[0.75rem] text-text-muted font-semibold tracking-[1.5px] uppercase mt-2">Google Reviews</p>
           </div>
           <div>
             <div className="flex items-center justify-center">
               <AnimatedCounter target={45} />
-              <span className="text-[3rem] font-bold text-accent-gold font-numbers text-gold-gradient">+</span>
+              <span className="text-[3rem] font-bold text-[#D4AF37] font-numbers">+</span>
             </div>
             <p className="text-[0.75rem] text-text-muted font-semibold tracking-[1.5px] uppercase mt-2">Premium Fleet</p>
           </div>
@@ -189,35 +202,46 @@ export const Home = () => {
       {/* 3. SERVICES SECTION */}
       <section className="bg-bg-primary py-24 px-6 md:px-12">
         <div className="max-w-[1200px] mx-auto">
-          <SectionHeader 
-            title="Our Taxi Services in Ujjain" 
-            subtitle="Reliable rides and holy pilgrimage packages designed with convenience and transparent pricing in mind."
-          />
+          <ScrollReveal direction="none" duration={1000}>
+            <SectionHeader 
+              title="Our Taxi Services in Ujjain" 
+              subtitle="Reliable rides and holy pilgrimage packages designed with convenience and transparent pricing in mind."
+            />
+          </ScrollReveal>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold">
-              <div className="text-4xl mb-4 text-accent-gold">✈️</div>
-              <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Indore Airport Drop</h3>
-              <p className="text-sm text-text-muted mb-6 leading-relaxed">Seamless Indore airport transfers at ₹1,560 flat rate.</p>
-              <a href={getWhatsAppLink("I need a cab for Indore Airport Drop")} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1">
-                Book Now <FiArrowRight />
-              </a>
-            </div>
-            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold">
-              <div className="text-4xl mb-4 text-accent-gold">🕉️</div>
-              <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Ujjain Darshan</h3>
-              <p className="text-sm text-text-muted mb-6 leading-relaxed">Complete city tour of Mahakal, Harsiddhi, and Kaal Bhairav.</p>
-              <a href={getWhatsAppLink("I need a cab for Ujjain Darshan")} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1">
-                Book Now <FiArrowRight />
-              </a>
-            </div>
-            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold">
-              <div className="text-4xl mb-4 text-accent-gold">🚘</div>
-              <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Local & Outstation</h3>
-              <p className="text-sm text-text-muted mb-6 leading-relaxed">Comfortable outstation rides to Omkareshwar, Bhopal, Sanchi.</p>
-              <a href={getWhatsAppLink("I need a local or outstation cab")} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1">
-                Book Now <FiArrowRight />
-              </a>
-            </div>
+            <ScrollReveal direction="up" delay={100} duration={600}>
+              <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold h-full">
+                <div className="text-4xl mb-4 text-accent-gold">✈️</div>
+                <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Indore Airport Drop</h3>
+                <p className="text-sm text-text-muted mb-6 leading-relaxed">Seamless Indore airport transfers at ₹1,560 flat rate.</p>
+                <a href={getWhatsAppLink("I need a cab for Indore Airport Drop")} className="text-[#D8891C] hover:text-[#D4AF37] font-semibold flex items-center gap-1">
+                  Book Now <FiArrowRight />
+                </a>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={200} duration={600}>
+              <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold h-full">
+                <div className="text-4xl mb-4 text-accent-gold">🕉️</div>
+                <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Ujjain Darshan</h3>
+                <p className="text-sm text-text-muted mb-6 leading-relaxed">Complete city tour of Mahakal, Harsiddhi, and Kaal Bhairav.</p>
+                <a href={getWhatsAppLink("I need a cab for Ujjain Darshan")} className="text-[#D8891C] hover:text-[#D4AF37] font-semibold flex items-center gap-1">
+                  Book Now <FiArrowRight />
+                </a>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal direction="up" delay={300} duration={600}>
+              <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold h-full">
+                <div className="text-4xl mb-4 text-accent-gold">🚘</div>
+                <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Local & Outstation</h3>
+                <p className="text-sm text-text-muted mb-6 leading-relaxed">Comfortable outstation rides to Omkareshwar, Bhopal, Sanchi.</p>
+                <a href={getWhatsAppLink("I need a local or outstation cab")} className="text-[#D8891C] hover:text-[#D4AF37] font-semibold flex items-center gap-1">
+                  Book Now <FiArrowRight />
+                </a>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -225,52 +249,55 @@ export const Home = () => {
       {/* 4. FLEET SECTION */}
       <section id="taxi" className="bg-bg-secondary py-24 px-6 md:px-12 border-t border-b border-[rgba(158,158,175,0.12)]">
         <div className="max-w-[1400px] mx-auto">
-          <SectionHeader title="Choose Your Ride" />
+          <ScrollReveal direction="none" duration={1000}>
+            <SectionHeader title="Choose Your Ride" />
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {fleetData.map((car) => (
-              <div 
-                key={car.id} 
-                className={`bg-bg-primary rounded-3xl p-6 border border-[rgba(158,158,175,0.12)] flex flex-col justify-between transition-all duration-500 relative overflow-hidden hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl ${
-                  car.popular ? 'border-accent-gold hover:glow-gold' : ''
-                }`}
-              >
-                {car.popular && (
-                  <span className="absolute top-4 right-4 bg-gold-gradient text-bg-primary font-bold text-[0.7rem] px-3 py-1 rounded-full uppercase tracking-wider">
-                    ⭐ Most Booked
-                  </span>
-                )}
-                <div>
-                  <img src={car.img} alt={car.model} width="360" height="192" loading="lazy" className="w-full h-48 object-contain mb-6 hover:scale-105 transition-transform" />
-                  <span className="text-xs font-semibold text-text-muted tracking-wider uppercase block mb-1">{car.name}</span>
-                  <h3 className="text-2xl font-heading font-semibold text-text-primary mb-2">{car.model}</h3>
-                  <div className="text-3xl font-heading text-accent-gold mb-6">
-                    {typeof car.price === 'number' ? (
-                      <>
-                        ₹{car.price}
-                        <span className="text-sm font-body text-text-muted ml-1">/km</span>
-                      </>
-                    ) : (
-                      car.price
-                    )}
+            {fleetData.map((car, index) => (
+              <ScrollReveal key={car.id} direction="up" delay={index * 100} duration={600}>
+                <div 
+                  className={`bg-bg-primary rounded-3xl p-6 border border-[rgba(158,158,175,0.12)] flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl h-full ${
+                    car.popular ? 'border-accent-gold hover:glow-gold' : ''
+                  }`}
+                >
+                  {car.popular && (
+                    <span className="absolute top-4 right-4 bg-[linear-gradient(135deg,#F2C94C_0%,#D4AF37_100%)] text-[#5B1E2D] font-bold text-[0.7rem] px-3 py-1 rounded-full uppercase tracking-wider">
+                      ⭐ Most Booked
+                    </span>
+                  )}
+                  <div>
+                    <img src={car.img} alt={car.model} width="360" height="192" loading="lazy" className="w-full h-48 object-contain mb-6 hover:scale-105 transition-transform" />
+                    <span className="text-xs font-semibold text-text-muted tracking-wider uppercase block mb-1">{car.name}</span>
+                    <h3 className="text-2xl font-heading font-semibold text-text-primary mb-2">{car.model}</h3>
+                    <div className="text-3xl font-heading text-accent-gold mb-6">
+                      {typeof car.price === 'number' ? (
+                        <>
+                          ₹{car.price}
+                          <span className="text-sm font-body text-text-muted ml-1">/km</span>
+                        </>
+                      ) : (
+                        car.price
+                      )}
+                    </div>
+                    <ul className="space-y-2 mb-8 text-sm text-text-muted font-body">
+                      {car.features.map((feat, idx) => (
+                        <li key={idx} className="flex items-center gap-2">
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-2 mb-8 text-sm text-text-muted font-body">
-                    {car.features.map((feat, idx) => (
-                      <li key={idx} className="flex items-center gap-2">
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex flex-col gap-3">
+                    <Button variant="outline-gold" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                      Get Estimate
+                    </Button>
+                    <Button variant="wa-full" href={getWhatsAppLink(`Book ${car.model}`)} className="justify-center">
+                      WhatsApp Book
+                    </Button>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-3">
-                  <Button variant="outline-gold" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-                    Get Estimate
-                  </Button>
-                  <Button variant="wa-full" href={getWhatsAppLink(`Book ${car.model}`)} className="justify-center">
-                    WhatsApp Book
-                  </Button>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -281,32 +308,36 @@ export const Home = () => {
       {/* 5. TOUR PACKAGES SECTION */}
       <section className="bg-bg-primary py-24 px-6 md:px-12">
         <div className="max-w-[1400px] mx-auto">
-          <SectionHeader title="Popular Yatra Packages from Ujjain" />
+          <ScrollReveal direction="none" duration={1000}>
+            <SectionHeader title="Popular Yatra Packages from Ujjain" />
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {toursData.map((tour) => (
-              <div key={tour.id} className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl transition-all duration-500">
-                <Link to={`/tours/${tour.id}`}>
-                  <img src={tour.img} alt={tour.title} width="290" height="192" loading="lazy" className="w-full h-48 object-cover" />
-                </Link>
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <span className="inline-block bg-[rgba(255,87,34,0.12)] text-accent-saffron text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
-                      {tour.category}
-                    </span>
-                    <h3 className="text-lg font-heading font-semibold text-text-primary mb-1 hover:text-accent-gold transition-colors duration-200">
-                      <Link to={`/tours/${tour.id}`}>{tour.title}</Link>
-                    </h3>
-                    <p className="text-xs text-text-muted tracking-wide mb-4">{tour.route}</p>
-                  </div>
-                  <div>
-                    <div className="text-xl font-heading text-accent-gold font-bold mb-4">{tour.price}</div>
-                    <Link to={`/tours/${tour.id}`} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1 text-sm transition-colors">
-                      View Package Details <FiArrowRight />
-                    </Link>
+            {toursData.map((tour, index) => (
+              <ScrollReveal key={tour.id} direction="up" delay={index * 80} duration={600}>
+                <div className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl transition-all duration-500 h-full">
+                  <Link to={`/tours/${tour.id}`}>
+                    <img src={tour.img} alt={tour.title} width="290" height="192" loading="lazy" className="w-full h-48 object-cover" />
+                  </Link>
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <span className="inline-block bg-[rgba(242,201,76,0.2)] text-accent-saffron text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+                        {tour.category}
+                      </span>
+                      <h3 className="text-lg font-heading font-semibold text-text-primary mb-1 hover:text-accent-gold transition-colors duration-200">
+                        <Link to={`/tours/${tour.id}`}>{tour.title}</Link>
+                      </h3>
+                      <p className="text-xs text-text-muted tracking-wide mb-4">{tour.route}</p>
+                    </div>
+                    <div>
+                      <div className="text-xl font-heading text-accent-gold font-bold mb-4">{tour.price}</div>
+                      <Link to={`/tours/${tour.id}`} className="text-[#D8891C] hover:text-[#D4AF37] font-semibold flex items-center gap-1 text-sm transition-colors">
+                        View Package Details <FiArrowRight />
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -316,28 +347,32 @@ export const Home = () => {
       <section className="bg-bg-secondary py-24 px-6 md:px-12 border-t border-b border-[rgba(158,158,175,0.12)]">
         <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 w-full">
-            <img 
-              src="/Images/premium_cab_fleet.webp" 
-              alt="Premium Taxi Fleet in Ujjain" 
-              width="640"
-              height="400"
-              loading="lazy"
-              className="w-full rounded-2xl shadow-royal border-2 border-accent-gold max-h-[400px] object-cover"
-            />
+            <ScrollReveal direction="left" duration={900}>
+              <img 
+                src="/Images/premium_cab_fleet.webp" 
+                alt="Premium Taxi Fleet in Ujjain" 
+                width="640"
+                height="400"
+                loading="lazy"
+                className="w-full rounded-2xl shadow-royal border-2 border-accent-gold max-h-[400px] object-cover"
+              />
+            </ScrollReveal>
           </div>
           <div className="flex-1">
-            <h2 className="text-4xl font-heading font-semibold text-gold-gradient mb-6 pb-2 border-b border-[rgba(158,158,175,0.12)]">
-              Ujjain Ka Apna Taxi Wala — Since 2001
-            </h2>
-            <p className="text-text-muted text-[1.05rem] leading-relaxed mb-6 font-body">
-              We are the most trusted, reliable, and premium taxi booking service provider in Ujjain. Our goal is to make your Mahakal Yatra and general travel safe, comfortable, and memorable.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Sanitized & clean vehicles</div>
-              <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Polite, local, and professional drivers</div>
-              <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ 24/7 client support</div>
-              <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Transparent billing with zero hidden costs</div>
-            </div>
+            <ScrollReveal direction="right" duration={900}>
+              <h2 className="text-4xl font-heading font-semibold text-transparent bg-clip-text bg-[linear-gradient(120deg,#D4AF37_0%,#D8891C_55%,#5B1E2D_100%)] mb-6 pb-2 border-b border-[rgba(158,158,175,0.12)]">
+                Ujjain Ka Apna Taxi Wala — Since 2001
+              </h2>
+              <p className="text-text-muted text-[1.05rem] leading-relaxed mb-6 font-body">
+                We are the most trusted, reliable, and premium taxi booking service provider in Ujjain. Our goal is to make your Mahakal Yatra and general travel safe, comfortable, and memorable.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Sanitized & clean vehicles</div>
+                <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Polite, local, and professional drivers</div>
+                <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ 24/7 client support</div>
+                <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Transparent billing with zero hidden costs</div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -345,67 +380,79 @@ export const Home = () => {
       {/* 7. SACRED PLACES SECTION */}
       <section className="bg-bg-primary py-24 px-6 md:px-12">
         <div className="max-w-[1400px] mx-auto">
-          <SectionHeader 
-            title="Ujjain Ke Pavitra Sthal" 
-            subtitle="Explore the Sacred City with our trusted drivers"
-          />
+          <ScrollReveal direction="none" duration={1000}>
+            <SectionHeader 
+              title="Ujjain Ke Pavitra Sthal" 
+              subtitle="Explore the Sacred City with our trusted drivers"
+            />
+          </ScrollReveal>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {placesData.map((place) => (
-              <div key={place.id} className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl transition-all duration-500">
-                <Link to={`/places/${place.slug}`}>
-                  <img src={place.img} alt={place.name} width="290" height="160" loading="lazy" className="w-full h-40 object-cover" />
-                  <div className="p-4">
-                    <h4 className="text-sm font-heading font-semibold text-text-primary hover:text-accent-gold transition-colors">
-                      {place.name}
-                    </h4>
+            {placesData.map((place, index) => (
+              <ScrollReveal key={place.id} direction="up" delay={index * 60} duration={600}>
+                <div className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl transition-all duration-500 h-full">
+                  <Link to={`/places/${place.slug}`}>
+                    <img src={place.img} alt={place.name} width="290" height="160" loading="lazy" className="w-full h-40 object-cover" />
+                    <div className="p-4">
+                      <h4 className="text-sm font-heading font-semibold text-text-primary hover:text-accent-gold transition-colors">
+                        {place.name}
+                      </h4>
+                    </div>
+                  </Link>
+                  <div className="px-4 pb-4">
+                    <a href={getWhatsAppLink(place.waText)} className="text-xs text-[#D8891C] hover:text-[#D4AF37] font-semibold inline-block">
+                      Book Taxi →
+                    </a>
                   </div>
-                </Link>
-                <div className="px-4 pb-4">
-                  <a href={getWhatsAppLink(place.waText)} className="text-xs text-accent-saffron hover:text-accent-gold font-semibold inline-block">
-                    Book Taxi →
-                  </a>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
-          <div className="text-center mt-12 bg-bg-secondary p-8 rounded-2xl border border-[rgba(158,158,175,0.12)] max-w-[600px] mx-auto">
-            <p className="text-sm text-text-muted mb-4">Planning a darshan tour? Call us and we'll arrange everything.</p>
-            <Button variant="primary" href={getWhatsAppLink("Plan My Ujjain Tour")}>
-              Plan My Ujjain Tour
-            </Button>
-          </div>
+          <ScrollReveal direction="up" delay={150} duration={800}>
+            <div className="text-center mt-12 bg-bg-secondary p-8 rounded-2xl border border-[rgba(158,158,175,0.12)] max-w-[600px] mx-auto">
+              <p className="text-sm text-text-muted mb-4">Planning a darshan tour? Call us and we'll arrange everything.</p>
+              <Button variant="primary" href={getWhatsAppLink("Plan My Ujjain Tour")}>
+                Plan My Ujjain Tour
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* 8. TESTIMONIALS SECTION */}
       <section className="bg-bg-secondary py-24 px-6 md:px-12 border-t border-b border-[rgba(158,158,175,0.12)]">
         <div className="max-w-[1400px] mx-auto">
-          <SectionHeader title="Pujari Ji & Yatri Reviews" />
+          <ScrollReveal direction="none" duration={1000}>
+            <SectionHeader title="Pujari Ji & Yatri Reviews" />
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {testimonialsData.map((test, idx) => (
-              <div key={idx} className="bg-bg-primary rounded-2xl p-6 border border-[rgba(158,158,175,0.12)] flex flex-col justify-between">
-                <div>
-                  <div className="flex gap-1 text-accent-gold text-sm mb-4">
-                    {[...Array(test.stars)].map((_, i) => <FiStar key={i} />)}
+              <ScrollReveal key={idx} direction="up" delay={idx * 80} duration={600}>
+                <div className="bg-bg-primary rounded-2xl p-6 border border-[rgba(158,158,175,0.12)] flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex gap-1 text-accent-gold text-sm mb-4">
+                      {[...Array(test.stars)].map((_, i) => <FiStar key={i} />)}
+                    </div>
+                    <p className="text-sm italic text-text-muted leading-relaxed mb-6">"{test.quote}"</p>
                   </div>
-                  <p className="text-sm italic text-text-muted leading-relaxed mb-6">"{test.quote}"</p>
+                  <div className="border-t border-[rgba(158,158,175,0.12)] pt-4 text-xs">
+                    <h4 className="font-semibold text-text-primary">{test.reviewer}</h4>
+                    <p className="text-text-muted mt-1">{test.date}</p>
+                  </div>
                 </div>
-                <div className="border-t border-[rgba(158,158,175,0.12)] pt-4 text-xs">
-                  <h4 className="font-semibold text-text-primary">{test.reviewer}</h4>
-                  <p className="text-text-muted mt-1">{test.date}</p>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
           
-          <div className="text-center mt-8">
-            <a href="https://google.com" target="_blank" rel="noreferrer" className="text-accent-saffron hover:text-accent-gold font-semibold transition-colors duration-200 inline-block text-sm">
-              See All 284 Reviews on Google →
-            </a>
-          </div>
+          <ScrollReveal direction="up" delay={150} duration={800}>
+            <div className="text-center mt-8">
+              <a href="https://google.com" target="_blank" rel="noreferrer" className="text-[#D8891C] hover:text-[#D4AF37] font-semibold transition-colors duration-200 inline-block text-sm">
+                See All 284 Reviews on Google →
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -413,11 +460,11 @@ export const Home = () => {
       <section className="bg-bg-primary py-24 px-6 md:px-12">
         <div className="max-w-[1400px] mx-auto">
           <SectionHeader title="Terms & Conditions — Please Read Before Booking" />
-          <div className="bg-bg-secondary rounded-3xl p-8 border border-[rgba(255,184,0,0.22)] shadow-royal glow-gold">
+          <div className="bg-bg-secondary rounded-3xl p-8 border border-[rgba(212,175,55,0.28)] shadow-royal glow-gold">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
               {termsData.map((term) => (
                 <div key={term.id} className="flex gap-4 items-start font-body">
-                  <span className="text-accent-gold font-numbers font-semibold text-sm leading-none bg-[rgba(255,184,0,0.08)] py-1 px-2.5 rounded-md border border-[rgba(255,184,0,0.22)]">
+                  <span className="text-accent-gold font-numbers font-semibold text-sm leading-none bg-[rgba(242,201,76,0.16)] py-1 px-2.5 rounded-md border border-[rgba(212,175,55,0.28)]">
                     {term.id}
                   </span>
                   <p className="text-sm text-text-muted leading-relaxed">{term.text}</p>
@@ -549,3 +596,4 @@ export const Home = () => {
   );
 };
 export default Home;
+

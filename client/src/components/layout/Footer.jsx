@@ -7,11 +7,9 @@ export const Footer = () => {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Our Taxis', path: '/services', hash: '#taxi' },
+    { name: 'Our Taxis', path: '/taxis' },
     { name: 'Our Tours', path: '/tours' },
     { name: 'Blogs', path: '/blogs' },
-    { name: 'Contact Us', path: '/contact' },
-    { name: 'Terms & Conditions', path: '/terms' },
   ];
 
   const destinations = [
@@ -123,7 +121,7 @@ export const Footer = () => {
             <li className="flex gap-3 items-start">
               <FiMapPin className="text-accent-gold min-w-[16px] mt-1" />
               <span>
-                67B, Atharva Vihar Colony, Ujjain-Indore Road, near Hotel Shanti Palace, Nanakheda, Ujjain — 456010
+                67B, Atharva Vihar Colony, Ujjain-Indore Road, near Hotel Shanti Palace, Nanakheda, Ujjain - 456010
               </span>
             </li>
           </ul>
@@ -132,13 +130,28 @@ export const Footer = () => {
       </div>
 
       {/* FOOTER BOTTOM */}
-      <div className="border-t border-[rgba(158,158,175,0.12)] py-6 text-center text-xs">
-        <p className="max-w-[1400px] mx-auto px-6">
-          &copy; {new Date().getFullYear()} Taxi In Ujjain. All rights reserved. | Powered by Heerova Solution
-        </p>
+      <div className="border-t border-[rgba(158,158,175,0.12)] py-8 text-center text-xs space-y-4">
+        {/* Policy Links Row */}
+        <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 text-sm font-medium text-text-primary">
+          <Link to="/terms" className="hover:text-accent-gold transition-colors">Terms & Conditions</Link>
+          <span className="text-[rgba(158,158,175,0.3)]">|</span>
+          <Link to="/privacy-policy" className="hover:text-accent-gold transition-colors">Privacy Policy</Link>
+          <span className="text-[rgba(158,158,175,0.3)]">|</span>
+          <Link to="/refund-policy" className="hover:text-accent-gold transition-colors">Refund Policy</Link>
+        </div>
+        {/* Copyright and Developer Info */}
+        <div className="space-y-1.5 text-text-muted">
+          <p className="max-w-[1400px] mx-auto px-6">
+            &copy; {new Date().getFullYear()} Taxi In Ujjain. All rights reserved.
+          </p>
+          <p>
+            Developed by <a href="https://globalyticsdigital.in/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold transition-colors font-medium">Globalytics Digital Pvt. Ltd.</a>
+          </p>
+        </div>
       </div>
 
     </footer>
   );
 };
 export default Footer;
+

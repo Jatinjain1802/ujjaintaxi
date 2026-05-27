@@ -65,13 +65,19 @@ export const BlogDetail = () => {
               {blog.title}
             </h1>
             
-            <div className="flex flex-wrap gap-6 text-sm text-text-muted pt-2">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-text-muted pt-2">
               <span className="flex items-center gap-1.5">
                 <FiCalendar className="text-accent-saffron" /> Published on {blog.publishDate}
               </span>
               <span className="flex items-center gap-1.5">
                 <FiClock className="text-accent-gold" /> {blog.readTime}
               </span>
+              <div className="flex items-center gap-2 md:border-l md:border-[rgba(158,158,175,0.22)] md:pl-6">
+                <span className="text-text-primary font-medium">{blog.authorName}</span>
+                <span className="text-xs bg-[rgba(255,184,0,0.1)] text-accent-gold px-2.5 py-0.5 rounded-full border border-[rgba(255,184,0,0.2)]">
+                  {blog.authorRole}
+                </span>
+              </div>
             </div>
           </div>
 
