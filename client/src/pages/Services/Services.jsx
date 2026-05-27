@@ -65,7 +65,7 @@ export const Services = () => {
               <div key={idx} className="bg-bg-secondary p-8 rounded-2xl border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold transition-colors duration-300">
                 <div>
                   <div className="text-4xl mb-4">{srv.icon}</div>
-                  <h3 className="text-xl font-heading font-semibold text-white mb-3">{srv.title}</h3>
+                  <h3 className="text-xl font-heading font-semibold text-text-primary mb-3">{srv.title}</h3>
                   <p className="text-sm text-text-muted leading-relaxed mb-6">{srv.desc}</p>
                 </div>
                 <div>
@@ -107,7 +107,7 @@ export const Services = () => {
                 <div>
                   <img src={car.img} alt={car.model} width="360" height="192" loading="lazy" className="w-full h-48 object-contain mb-6 hover:scale-105 transition-transform" />
                   <span className="text-xs font-semibold text-text-muted tracking-wider uppercase block mb-1">{car.name}</span>
-                  <h3 className="text-2xl font-heading font-semibold text-white mb-2">{car.model}</h3>
+                  <h3 className="text-2xl font-heading font-semibold text-text-primary mb-2">{car.model}</h3>
                   <div className="text-3xl font-heading text-accent-gold mb-6">
                     {typeof car.price === 'number' ? (
                       <>
@@ -151,7 +151,7 @@ export const Services = () => {
           
           <div className="flex justify-center">
             <div className="bg-bg-secondary p-8 rounded-3xl border border-[rgba(158,158,175,0.12)] w-full max-w-[600px]">
-              <h3 className="text-xl font-heading font-semibold text-white mb-6 border-b border-[rgba(158,158,175,0.12)] pb-2 text-center">
+              <h3 className="text-xl font-heading font-semibold text-text-primary mb-6 border-b border-[rgba(158,158,175,0.2)] pb-2 text-center">
                 Estimate Inquiry Form
               </h3>
               <form onSubmit={handleEstimateRequest} className="space-y-4 font-body">
@@ -163,7 +163,7 @@ export const Services = () => {
                     placeholder="Your Name" 
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   />
                   <input 
                     type="tel" 
@@ -172,7 +172,7 @@ export const Services = () => {
                     placeholder="Mobile Number" 
                     value={formData.mobile}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -183,7 +183,7 @@ export const Services = () => {
                     placeholder="Pickup Location" 
                     value={formData.pickup}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   />
                   <input 
                     type="text" 
@@ -192,7 +192,7 @@ export const Services = () => {
                     placeholder="Drop Location" 
                     value={formData.drop}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -202,14 +202,14 @@ export const Services = () => {
                     required
                     value={formData.date}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm color-scheme-dark"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   />
                   <select 
                     id="carType"
                     required
                     value={formData.carType}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   >
                     <option value="" disabled>Select Car</option>
                     <option value="Dzire">Maruti Dzire (Economy)</option>

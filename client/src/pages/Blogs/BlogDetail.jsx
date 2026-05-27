@@ -27,7 +27,7 @@ export const BlogDetail = () => {
     return (
       <div className="pt-[150px] pb-24 text-center bg-bg-primary min-h-screen font-body">
         <div className="max-w-[500px] mx-auto px-6 space-y-6">
-          <h2 className="text-3xl font-heading text-white">Article Not Found</h2>
+          <h2 className="text-3xl font-heading text-text-primary">Article Not Found</h2>
           <p className="text-text-muted text-sm">
             The blog post you are looking for might have been moved or removed.
           </p>
@@ -61,7 +61,7 @@ export const BlogDetail = () => {
             <span className="inline-block bg-[rgba(255,184,0,0.1)] text-accent-gold text-xs font-semibold px-4 py-1.5 rounded-full border border-[rgba(255,184,0,0.2)] uppercase tracking-wider">
               {blog.category}
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-text-primary leading-tight">
               {blog.title}
             </h1>
             
@@ -100,7 +100,7 @@ export const BlogDetail = () => {
                   return (
                     <div 
                       key={index} 
-                      className="bg-bg-secondary p-6 md:p-8 rounded-2xl border-l-4 border-accent-gold border-y border-r border-[rgba(158,158,175,0.12)] text-white space-y-2 my-6"
+                      className="bg-bg-secondary p-6 md:p-8 rounded-2xl border-l-4 border-accent-gold border-y border-r border-[rgba(158,158,175,0.12)] text-text-primary space-y-2 my-6"
                     >
                       <p className="font-heading font-medium text-lg leading-snug">
                         {paragraph}
@@ -122,7 +122,7 @@ export const BlogDetail = () => {
               
               {/* Tour Logistics Card */}
               <div className="bg-bg-secondary p-6 rounded-3xl border border-[rgba(158,158,175,0.12)] space-y-6">
-                <h3 className="text-lg font-heading font-semibold text-white border-b border-[rgba(158,158,175,0.12)] pb-3 flex items-center gap-2">
+                <h3 className="text-lg font-heading font-semibold text-text-primary border-b border-[rgba(158,158,175,0.12)] pb-3 flex items-center gap-2">
                   <FiCompass className="text-accent-gold" /> Yatra Planner
                 </h3>
 

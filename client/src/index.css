@@ -6,23 +6,23 @@
   --font-body: "DM Sans", sans-serif;
   --font-numbers: "Space Mono", monospace;
 
-  --color-bg-primary: #0A0A0F;
-  --color-bg-secondary: #13131C;
-  --color-bg-tertiary: #1B1B26;
+  --color-bg-primary: #FCFCFD;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F1F3F5;
 
   --color-accent-gold: #FFB800;
-  --color-accent-gold-glow: rgba(255, 184, 0, 0.28);
+  --color-accent-gold-glow: rgba(255, 184, 0, 0.15);
   --color-accent-saffron: #FF5722;
-  --color-accent-saffron-glow: rgba(255, 87, 34, 0.35);
+  --color-accent-saffron-glow: rgba(255, 87, 34, 0.18);
 
-  --color-text-primary: #F8F9FA;
-  --color-text-muted: #9E9EAF;
-  --color-text-gold: #FFC72C;
+  --color-text-primary: #111827;
+  --color-text-muted: #4B5563;
+  --color-text-gold: #D97706; /* Accessible Amber-600 */
 
-  --color-success-green: #00E676;
-  --color-success-green-glow: rgba(0, 230, 118, 0.35);
+  --color-success-green: #00C853;
+  --color-success-green-glow: rgba(0, 200, 83, 0.15);
   
-  --shadow-royal: 0 16px 40px rgba(0, 0, 0, 0.75);
+  --shadow-royal: 0 10px 30px rgba(15, 23, 42, 0.06);
 }
 
 /* Custom premium scrollbar mimicking the original design */
@@ -31,12 +31,12 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0F;
+  background: #FCFCFD;
 }
 ::-webkit-scrollbar-thumb {
   background: #FFB800;
   border-radius: 10px;
-  border: 2px solid #0A0A0F;
+  border: 2px solid #FCFCFD;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #FF5722;
@@ -44,9 +44,9 @@
 
 /* Premium Animations */
 @keyframes wa-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
-  70% { box-shadow: 0 0 0 18px rgba(0, 230, 118, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7); }
+  70% { box-shadow: 0 0 0 18px rgba(0, 200, 83, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
 }
 
 .animate-wa-pulse {
@@ -65,15 +65,15 @@
 
 /* Custom glow utility classes */
 .glow-gold {
-  box-shadow: 0 0 30px rgba(255, 184, 0, 0.22);
+  box-shadow: 0 0 30px rgba(255, 184, 0, 0.12);
 }
 
 .glow-saffron {
-  box-shadow: 0 0 30px rgba(255, 87, 34, 0.25);
+  box-shadow: 0 0 30px rgba(255, 87, 34, 0.12);
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #FFF2CC 0%, #FFB800 60%, #D69900 100%);
+  background: linear-gradient(135deg, #FFB800 0%, #D69900 60%, #B37400 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -89,5 +89,5 @@
 }
 
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #FFF2CC 0%, #FFB800 60%, #D69900 100%);
+  background: linear-gradient(135deg, #FFC72C 0%, #FFB800 60%, #D69900 100%);
 }

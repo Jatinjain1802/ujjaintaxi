@@ -14,7 +14,7 @@ export const PlaceDetail = () => {
   if (!place) {
     return (
       <div className="pt-[150px] pb-24 text-center bg-bg-primary min-h-screen">
-        <h2 className="text-3xl font-heading text-white mb-6">Place Not Found</h2>
+        <h2 className="text-3xl font-heading text-text-primary mb-6">Place Not Found</h2>
         <Button to="/">Return Home</Button>
       </div>
     );
@@ -50,7 +50,7 @@ export const PlaceDetail = () => {
 
         {/* Detailed Copy */}
         <div className="bg-bg-secondary p-8 md:p-12 rounded-3xl border border-[rgba(158,158,175,0.12)] space-y-6">
-          <h3 className="text-xl font-heading font-semibold text-white">About the Sacred Destination</h3>
+          <h3 className="text-xl font-heading font-semibold text-text-primary">About the Sacred Destination</h3>
           <p className="text-text-muted leading-relaxed text-[1.05rem]">
             {place.description}
           </p>

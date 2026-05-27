@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiMenu, FiX, FiPhone, FiMessageCircle } from 'react-icons/fi';
 import Button from '../ui/Button';
 
 /**
@@ -60,8 +59,8 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[1000] border-b border-[rgba(255,184,0,0.22)] backdrop-blur-md transition-all duration-400 ${
-      isScrolled ? 'bg-bg-primary shadow-royal py-3' : 'bg-[rgba(10,10,15,0.82)] py-5'
+    <nav className={`fixed top-0 left-0 w-full z-[1000] border-b border-[rgba(255,184,0,0.18)] backdrop-blur-md transition-all duration-400 ${
+      isScrolled ? 'bg-bg-primary shadow-royal py-3' : 'bg-[rgba(252,252,253,0.82)] py-5'
     }`}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
         
@@ -140,7 +139,7 @@ export const Navbar = () => {
           ))}
           <li className="w-full max-w-[280px] mt-4">
             <Button variant="wa-ghost" href="https://wa.me/919826157552" className="w-full flex items-center justify-center gap-2">
-              <FaWhatsapp /> 💬 WhatsApp Karein
+              <FiMessageCircle /> WhatsApp Karein
             </Button>
           </li>
         </ul>

@@ -24,7 +24,7 @@ export const Terms = () => {
                   {term.id}
                 </span>
                 <p className="text-base text-text-muted leading-relaxed pt-0.5">
-                  <strong className="text-white block mb-1">{term.title}:</strong>
+                  <strong className="text-text-primary block mb-1">{term.title}:</strong>
                   {term.text}
                 </p>
               </div>
@@ -34,7 +34,7 @@ export const Terms = () => {
 
         {/* CTA section at bottom */}
         <div className="text-center mt-12 bg-bg-secondary p-8 rounded-2xl border border-[rgba(158,158,175,0.12)] max-w-[600px] mx-auto space-y-4">
-          <p className="text-lg font-heading font-semibold text-white">Have questions about interstate permits or toll rates for Omkareshwar?</p>
+          <p className="text-lg font-heading font-semibold text-text-primary">Have questions about interstate permits or toll rates for Omkareshwar?</p>
           <p className="text-sm text-text-muted">Our representatives are happy to clear all doubts before you make a booking deposit.</p>
           <a 
             href="https://wa.me/919826157552?text=I+have+a+question+about+booking+terms" 

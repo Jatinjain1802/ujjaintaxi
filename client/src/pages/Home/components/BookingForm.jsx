@@ -62,13 +62,13 @@ export const BookingForm = () => {
   };
 
   return (
-    <div className="bg-[rgba(10,10,15,0.82)] border border-[rgba(255,184,0,0.22)] rounded-3xl p-8 backdrop-blur-lg shadow-royal glow-gold w-full max-w-[480px]">
-      <h3 className="text-center text-white text-2xl font-semibold mb-6 border-b border-[rgba(158,158,175,0.12)] pb-3 font-heading">
+    <div className="bg-white/90 border border-[rgba(255,184,0,0.35)] rounded-3xl p-8 backdrop-blur-lg shadow-royal glow-gold w-full max-w-[480px]">
+      <h3 className="text-center text-text-primary text-2xl font-semibold mb-6 border-b border-[rgba(158,158,175,0.2)] pb-3 font-heading">
         Book Your Ride
       </h3>
 
       {/* TRIP TABS */}
-      <div className="flex bg-[rgba(10,10,15,0.5)] border border-[rgba(158,158,175,0.12)] rounded-xl overflow-hidden mb-6 p-1">
+      <div className="flex bg-bg-primary border border-slate-200/60 rounded-xl overflow-hidden mb-6 p-1">
         {['oneway', 'roundtrip', 'local', 'airport'].map((type) => (
           <button
             key={type}
@@ -76,8 +76,8 @@ export const BookingForm = () => {
             onClick={() => setTripType(type)}
             className={`flex-1 py-2 text-xs font-semibold rounded-lg font-body capitalize transition-all duration-300 ${
               tripType === type
-                ? 'bg-gold-gradient text-bg-primary font-bold'
-                : 'text-text-muted hover:text-white'
+                ? 'bg-gold-gradient text-slate-950 font-bold'
+                : 'text-text-muted hover:text-text-primary'
             }`}
           >
             {type === 'oneway' ? 'One Way' : type === 'roundtrip' ? 'Round Trip' : type}
@@ -97,7 +97,7 @@ export const BookingForm = () => {
               required
               value={formData.pickup}
               onChange={handleInputChange}
-              className="w-full pl-10 pr-3 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-bg-tertiary focus:shadow-[0_0_15px_var(--color-accent-gold-glow)]"
+              className="w-full pl-10 pr-3 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-white focus:shadow-[0_0_15px_var(--color-accent-gold-glow)]"
             />
           </div>
           <div className="relative">
@@ -109,7 +109,7 @@ export const BookingForm = () => {
               required
               value={formData.drop}
               onChange={handleInputChange}
-              className="w-full pl-10 pr-3 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-bg-tertiary focus:shadow-[0_0_15px_var(--color-accent-gold-glow)]"
+              className="w-full pl-10 pr-3 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-white focus:shadow-[0_0_15px_var(--color-accent-gold-glow)]"
             />
           </div>
         </div>
@@ -122,7 +122,7 @@ export const BookingForm = () => {
             required
             value={formData.date}
             onChange={handleInputChange}
-            className="w-full px-3 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-bg-tertiary color-scheme-dark"
+            className="w-full px-3 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-white"
           />
           <input
             type="time"
@@ -130,7 +130,7 @@ export const BookingForm = () => {
             required
             value={formData.time}
             onChange={handleInputChange}
-            className="w-full px-3 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-bg-tertiary color-scheme-dark"
+            className="w-full px-3 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-white"
           />
         </div>
 
@@ -143,7 +143,7 @@ export const BookingForm = () => {
             required
             value={formData.returnDate}
             onChange={handleInputChange}
-            className="w-full px-3 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-bg-tertiary color-scheme-dark"
+            className="w-full px-3 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-white"
           />
         )}
 
@@ -153,7 +153,7 @@ export const BookingForm = () => {
           required
           value={formData.carType}
           onChange={handleInputChange}
-          className="w-full px-3 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-bg-tertiary"
+          className="w-full px-3 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-white"
         >
           <option value="" disabled>Select Car Type</option>
           {carOptions.map((car) => (
@@ -172,7 +172,7 @@ export const BookingForm = () => {
             required
             value={formData.name}
             onChange={handleInputChange}
-            className="w-full px-3 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-bg-tertiary"
+            className="w-full px-3 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-white"
           />
           <input
             type="tel"
@@ -181,7 +181,7 @@ export const BookingForm = () => {
             required
             value={formData.mobile}
             onChange={handleInputChange}
-            className="w-full px-3 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-bg-tertiary"
+            className="w-full px-3 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary font-body text-sm outline-none transition-all duration-300 focus:border-accent-gold focus:bg-white"
           />
         </div>
 

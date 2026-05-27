@@ -96,7 +96,7 @@ export const About = () => {
             {amenities.map((item, idx) => (
               <div key={idx} className="bg-bg-secondary p-8 rounded-2xl border border-[rgba(158,158,175,0.12)] flex flex-col items-center text-center hover:border-accent-gold transition-colors duration-300">
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-heading font-semibold text-white mb-2">{item.title}</h3>
+                <h3 className="text-lg font-heading font-semibold text-text-primary mb-2">{item.title}</h3>
                 <p className="text-sm text-text-muted leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -112,7 +112,7 @@ export const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {standards.map((std, idx) => (
               <div key={idx} className="bg-bg-secondary p-6 rounded-2xl border border-[rgba(158,158,175,0.12)] hover:border-accent-gold transition-colors duration-300">
-                <h4 className="text-base font-semibold text-white mb-2">{std.title}</h4>
+                <h4 className="text-base font-semibold text-text-primary mb-2">{std.title}</h4>
                 <p className="text-xs text-text-muted leading-relaxed">{std.desc}</p>
               </div>
             ))}

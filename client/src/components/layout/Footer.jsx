@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiPhone, FiMail, FiMapPin, FiMessageCircle } from 'react-icons/fi';
 
 export const Footer = () => {
   const quickLinks = [
@@ -38,7 +37,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-bg-secondary border-t border-[rgba(255,184,0,0.22)] text-text-muted font-body">
+    <footer className="bg-bg-tertiary border-t border-[rgba(255,184,0,0.22)] text-text-muted font-body">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         
         {/* BRAND COLUMN */}
@@ -47,6 +46,8 @@ export const Footer = () => {
             <img 
               src="/Images/logo.webp" 
               alt="Taxi In Ujjain Logo" 
+              width="57"
+              height="44"
               className="h-11 w-auto drop-shadow-[0_0_8px_rgba(255,184,0,0.2)]"
             />
             <span>Taxi In Ujjain</span>
@@ -58,7 +59,7 @@ export const Footer = () => {
 
         {/* QUICK LINKS */}
         <div>
-          <h4 className="font-heading font-semibold text-white text-lg tracking-wider mb-6 border-b border-[rgba(158,158,175,0.12)] pb-2 inline-block">
+          <h4 className="font-heading font-semibold text-text-primary text-lg tracking-wider mb-6 border-b border-[rgba(158,158,175,0.12)] pb-2 inline-block">
             Quick Links
           </h4>
           <ul className="flex flex-col gap-3">
@@ -78,7 +79,7 @@ export const Footer = () => {
 
         {/* DESTINATIONS */}
         <div>
-          <h4 className="font-heading font-semibold text-white text-lg tracking-wider mb-6 border-b border-[rgba(158,158,175,0.12)] pb-2 inline-block">
+          <h4 className="font-heading font-semibold text-text-primary text-lg tracking-wider mb-6 border-b border-[rgba(158,158,175,0.12)] pb-2 inline-block">
             Ujjain Local Tours
           </h4>
           <ul className="grid grid-cols-1 gap-3 text-sm">
@@ -97,7 +98,7 @@ export const Footer = () => {
 
         {/* CONTACT INFO */}
         <div>
-          <h4 className="font-heading font-semibold text-white text-lg tracking-wider mb-6 border-b border-[rgba(158,158,175,0.12)] pb-2 inline-block">
+          <h4 className="font-heading font-semibold text-text-primary text-lg tracking-wider mb-6 border-b border-[rgba(158,158,175,0.12)] pb-2 inline-block">
             Contact Us
           </h4>
           <ul className="flex flex-col gap-4 text-sm">
@@ -108,7 +109,7 @@ export const Footer = () => {
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <FaWhatsapp className="text-success-green min-w-[16px]" />
+              <FiMessageCircle className="text-success-green min-w-[16px]" />
               <a href="https://wa.me/919826157552" target="_blank" rel="noreferrer" className="hover:text-accent-gold transition-colors">
                 +91 9826157552 (WhatsApp)
               </a>

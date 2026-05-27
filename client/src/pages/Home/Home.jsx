@@ -51,9 +51,9 @@ export const Home = () => {
     <div className="font-body select-none">
       
       {/* 1. HERO SECTION */}
-      <header className="relative min-h-screen bg-[radial-gradient(circle_at_10%_20%,#13131C_0%,#0A0A0F_80%)] flex items-center pt-[120px] pb-16 overflow-hidden">
+      <header className="relative min-h-screen bg-[radial-gradient(circle_at_10%_20%,#FFFFFF_0%,#FCFBFA_40%,#F5EFE6_100%)] flex items-center pt-[120px] pb-16 overflow-hidden">
         {/* Starry Overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,184,0,0.08)_1.2px,transparent_1.2px),radial-gradient(circle_at_15%_25%,rgba(255,255,255,0.16)_1.2px,transparent_1.2px),radial-gradient(circle_at_75%_35%,rgba(255,255,255,0.14)_1.5px,transparent_1.5px)] bg-[size:28px_28px,100%_100%] opacity-65 pointer-events-none animate-starry-twinkle" />
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,87,34,0.05)_1.2px,transparent_1.2px),radial-gradient(circle_at_15%_25%,rgba(255,184,0,0.08)_1.2px,transparent_1.2px)] opacity-80 pointer-events-none animate-starry-twinkle" />
 
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
           
@@ -62,7 +62,7 @@ export const Home = () => {
             <span className="inline-block text-text-gold border border-[rgba(255,184,0,0.22)] px-[18px] py-1.5 rounded-full text-xs font-medium tracking-widest mb-8 bg-[rgba(255,184,0,0.06)] shadow-[inset_0_0_15px_rgba(255,184,0,0.1)]">
               ✦ Ujjain's Most Trusted Since 2001
             </span>
-            <h1 className="font-hero text-[3.8rem] md:text-[4.8rem] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-[#FFEFCF] to-accent-gold mb-6">
+            <h1 className="font-hero text-[3.8rem] md:text-[4.8rem] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent-saffron to-text-gold mb-6 animate-pulse">
               Mahakal Darshan<br />Ki Sahi Sawari
             </h1>
             <p className="text-lg md:text-xl text-text-muted mb-10 tracking-wide">
@@ -134,25 +134,25 @@ export const Home = () => {
             subtitle="Reliable rides and holy pilgrimage packages designed with convenience and transparent pricing in mind."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-accent-gold hover:shadow-royal hover:glow-gold">
+            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold">
               <div className="text-4xl mb-4 text-accent-gold">✈️</div>
-              <h3 className="text-xl font-semibold mb-3 font-heading text-white">Indore Airport Drop</h3>
+              <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Indore Airport Drop</h3>
               <p className="text-sm text-text-muted mb-6 leading-relaxed">Seamless Indore airport transfers at ₹1,560 flat rate.</p>
               <a href={getWhatsAppLink("I need a cab for Indore Airport Drop")} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1">
                 Book Now <FiArrowRight />
               </a>
             </div>
-            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-accent-gold hover:shadow-royal hover:glow-gold">
+            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold">
               <div className="text-4xl mb-4 text-accent-gold">🕉️</div>
-              <h3 className="text-xl font-semibold mb-3 font-heading text-white">Ujjain Darshan</h3>
+              <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Ujjain Darshan</h3>
               <p className="text-sm text-text-muted mb-6 leading-relaxed">Complete city tour of Mahakal, Harsiddhi, and Kaal Bhairav.</p>
               <a href={getWhatsAppLink("I need a cab for Ujjain Darshan")} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1">
                 Book Now <FiArrowRight />
               </a>
             </div>
-            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-accent-gold hover:shadow-royal hover:glow-gold">
+            <div className="bg-bg-secondary p-10 rounded-2xl border border-[rgba(158,158,175,0.12)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-accent-gold hover:shadow-2xl hover:glow-gold">
               <div className="text-4xl mb-4 text-accent-gold">🚘</div>
-              <h3 className="text-xl font-semibold mb-3 font-heading text-white">Local & Outstation</h3>
+              <h3 className="text-xl font-semibold mb-3 font-heading text-text-primary">Local & Outstation</h3>
               <p className="text-sm text-text-muted mb-6 leading-relaxed">Comfortable outstation rides to Omkareshwar, Bhopal, Sanchi.</p>
               <a href={getWhatsAppLink("I need a local or outstation cab")} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1">
                 Book Now <FiArrowRight />
@@ -171,8 +171,8 @@ export const Home = () => {
             {fleetData.map((car) => (
               <div 
                 key={car.id} 
-                className={`bg-bg-primary rounded-3xl p-6 border border-[rgba(158,158,175,0.12)] flex flex-col justify-between transition-all duration-400 relative overflow-hidden hover:-translate-y-2 hover:border-accent-gold ${
-                  car.popular ? 'border-accent-gold hover:shadow-royal hover:glow-gold' : ''
+                className={`bg-bg-primary rounded-3xl p-6 border border-[rgba(158,158,175,0.12)] flex flex-col justify-between transition-all duration-500 relative overflow-hidden hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl ${
+                  car.popular ? 'border-accent-gold hover:glow-gold' : ''
                 }`}
               >
                 {car.popular && (
@@ -183,7 +183,7 @@ export const Home = () => {
                 <div>
                   <img src={car.img} alt={car.model} width="360" height="192" loading="lazy" className="w-full h-48 object-contain mb-6 hover:scale-105 transition-transform" />
                   <span className="text-xs font-semibold text-text-muted tracking-wider uppercase block mb-1">{car.name}</span>
-                  <h3 className="text-2xl font-heading font-semibold text-white mb-2">{car.model}</h3>
+                  <h3 className="text-2xl font-heading font-semibold text-text-primary mb-2">{car.model}</h3>
                   <div className="text-3xl font-heading text-accent-gold mb-6">
                     {typeof car.price === 'number' ? (
                       <>
@@ -223,21 +223,25 @@ export const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {toursData.map((tour) => (
-              <div key={tour.id} className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold transition-colors duration-300">
-                <img src={tour.img} alt={tour.title} width="290" height="192" loading="lazy" className="w-full h-48 object-cover" />
+              <div key={tour.id} className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl transition-all duration-500">
+                <Link to={`/tours/${tour.id}`}>
+                  <img src={tour.img} alt={tour.title} width="290" height="192" loading="lazy" className="w-full h-48 object-cover" />
+                </Link>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
                     <span className="inline-block bg-[rgba(255,87,34,0.12)] text-accent-saffron text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
                       {tour.category}
                     </span>
-                    <h3 className="text-lg font-heading font-semibold text-white mb-1">{tour.title}</h3>
+                    <h3 className="text-lg font-heading font-semibold text-text-primary mb-1 hover:text-accent-gold transition-colors duration-200">
+                      <Link to={`/tours/${tour.id}`}>{tour.title}</Link>
+                    </h3>
                     <p className="text-xs text-text-muted tracking-wide mb-4">{tour.route}</p>
                   </div>
                   <div>
                     <div className="text-xl font-heading text-accent-gold font-bold mb-4">{tour.price}</div>
-                    <a href={getWhatsAppLink(tour.waText)} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1 text-sm">
-                      Book This Package <FiArrowRight />
-                    </a>
+                    <Link to={`/tours/${tour.id}`} className="text-accent-saffron hover:text-accent-gold font-semibold flex items-center gap-1 text-sm transition-colors">
+                      View Package Details <FiArrowRight />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -267,10 +271,10 @@ export const Home = () => {
               We are the most trusted, reliable, and premium taxi booking service provider in Ujjain. Our goal is to make your Mahakal Yatra and general travel safe, comfortable, and memorable.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="text-sm font-semibold text-white flex items-center gap-2">✔️ Sanitized & clean vehicles</div>
-              <div className="text-sm font-semibold text-white flex items-center gap-2">✔️ Polite, local, and professional drivers</div>
-              <div className="text-sm font-semibold text-white flex items-center gap-2">✔️ 24/7 client support</div>
-              <div className="text-sm font-semibold text-white flex items-center gap-2">✔️ Transparent billing with zero hidden costs</div>
+              <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Sanitized & clean vehicles</div>
+              <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Polite, local, and professional drivers</div>
+              <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ 24/7 client support</div>
+              <div className="text-sm font-semibold text-text-primary flex items-center gap-2">✔️ Transparent billing with zero hidden costs</div>
             </div>
           </div>
         </div>
@@ -286,11 +290,11 @@ export const Home = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {placesData.map((place) => (
-              <div key={place.id} className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold transition-colors duration-300">
+              <div key={place.id} className="bg-bg-secondary rounded-2xl overflow-hidden border border-[rgba(158,158,175,0.12)] flex flex-col justify-between hover:border-accent-gold hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl transition-all duration-500">
                 <Link to={`/places/${place.slug}`}>
                   <img src={place.img} alt={place.name} width="290" height="160" loading="lazy" className="w-full h-40 object-cover" />
                   <div className="p-4">
-                    <h4 className="text-sm font-heading font-semibold text-white hover:text-accent-gold transition-colors">
+                    <h4 className="text-sm font-heading font-semibold text-text-primary hover:text-accent-gold transition-colors">
                       {place.name}
                     </h4>
                   </div>
@@ -328,7 +332,7 @@ export const Home = () => {
                   <p className="text-sm italic text-text-muted leading-relaxed mb-6">"{test.quote}"</p>
                 </div>
                 <div className="border-t border-[rgba(158,158,175,0.12)] pt-4 text-xs">
-                  <h4 className="font-semibold text-white">{test.reviewer}</h4>
+                  <h4 className="font-semibold text-text-primary">{test.reviewer}</h4>
                   <p className="text-text-muted mt-1">{test.date}</p>
                 </div>
               </div>
@@ -401,7 +405,7 @@ export const Home = () => {
             {/* QUICK CONTACT BOOKING FORM */}
             <div className="bg-bg-primary rounded-2xl p-8 border border-[rgba(158,158,175,0.12)] flex flex-col justify-between">
               <div>
-                <h3 className="text-xl font-heading font-semibold text-white mb-6 border-b border-[rgba(158,158,175,0.12)] pb-2">
+                <h3 className="text-xl font-heading font-semibold text-text-primary mb-6 border-b border-[rgba(158,158,175,0.2)] pb-2">
                   Quick Booking Request
                 </h3>
                 <form onSubmit={handleContactSubmit} className="space-y-4">
@@ -412,7 +416,7 @@ export const Home = () => {
                     placeholder="Your Name" 
                     value={contactForm.name}
                     onChange={handleContactChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300"
+                    className="w-full px-4 py-3 bg-bg-secondary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300"
                   />
                   <input 
                     type="tel" 
@@ -421,7 +425,7 @@ export const Home = () => {
                     placeholder="Mobile Number" 
                     value={contactForm.mobile}
                     onChange={handleContactChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300"
+                    className="w-full px-4 py-3 bg-bg-secondary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300"
                   />
                   <input 
                     type="text" 
@@ -430,7 +434,7 @@ export const Home = () => {
                     placeholder="Pickup Location" 
                     value={contactForm.pickup}
                     onChange={handleContactChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300"
+                    className="w-full px-4 py-3 bg-bg-secondary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300"
                   />
                   <input 
                     type="text" 
@@ -439,14 +443,14 @@ export const Home = () => {
                     placeholder="Drop Location" 
                     value={contactForm.drop}
                     onChange={handleContactChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300"
+                    className="w-full px-4 py-3 bg-bg-secondary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300"
                   />
                   <select 
                     id="carType"
                     required
                     value={contactForm.carType}
                     onChange={handleContactChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300"
+                    className="w-full px-4 py-3 bg-bg-secondary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300"
                   >
                     <option value="" disabled>Car Type</option>
                     <option value="Dzire">Dzire</option>
@@ -464,7 +468,7 @@ export const Home = () => {
                     required
                     value={contactForm.date}
                     onChange={handleContactChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 color-scheme-dark"
+                    className="w-full px-4 py-3 bg-bg-secondary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300"
                   />
                   <Button variant="wa-full" type="submit" className="justify-center mt-2">
                     Send Booking Request via WhatsApp

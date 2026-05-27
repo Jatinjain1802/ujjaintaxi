@@ -59,7 +59,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="text-sm text-text-muted">Primary Phone Number</h4>
-                <a href="tel:+919522205111" className="text-lg font-bold text-white hover:underline">+91 9522205111</a>
+                <a href="tel:+919522205111" className="text-lg font-bold text-text-primary hover:underline">+91 9522205111</a>
               </div>
             </div>
 
@@ -69,7 +69,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="text-sm text-text-muted">WhatsApp Booking Support</h4>
-                <a href="https://wa.me/919826157552" target="_blank" rel="noreferrer" className="text-lg font-bold text-white hover:underline">+91 9826157552</a>
+                <a href="https://wa.me/919826157552" target="_blank" rel="noreferrer" className="text-lg font-bold text-text-primary hover:underline">+91 9826157552</a>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="text-sm text-text-muted">Email Assistance</h4>
-                <a href="mailto:taxiinujjain.in@gmail.com" className="text-lg font-bold text-white hover:underline">taxiinujjain.in@gmail.com</a>
+                <a href="mailto:taxiinujjain.in@gmail.com" className="text-lg font-bold text-text-primary hover:underline">taxiinujjain.in@gmail.com</a>
               </div>
             </div>
 
@@ -89,7 +89,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="text-sm text-text-muted mb-1">Office Address</h4>
-                <p className="text-white leading-relaxed text-sm">
+                <p className="text-text-primary leading-relaxed text-sm">
                   67B, Atharva Vihar Colony, Ujjain-Indore Road, near Hotel Shanti Palace, Nanakheda, Ujjain — 456010
                 </p>
               </div>
@@ -108,7 +108,7 @@ export const Contact = () => {
 
           {/* RIGHT: Quick Booking Form */}
           <div className="bg-bg-secondary p-8 rounded-3xl border border-[rgba(158,158,175,0.12)]">
-            <h3 className="text-xl font-heading font-semibold text-white mb-6 border-b border-[rgba(158,158,175,0.12)] pb-3">
+            <h3 className="text-xl font-heading font-semibold text-text-primary mb-6 border-b border-[rgba(158,158,175,0.2)] pb-3">
               Quick Booking Request
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4 font-body">
@@ -121,7 +121,7 @@ export const Contact = () => {
                   placeholder="E.g. Jatin Jain"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                  className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                 />
               </div>
 
@@ -134,7 +134,7 @@ export const Contact = () => {
                   placeholder="E.g. +91 98261XXXXX"
                   value={formData.mobile}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                  className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                 />
               </div>
 
@@ -148,7 +148,7 @@ export const Contact = () => {
                     placeholder="E.g. Indore Airport"
                     value={formData.pickup}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   />
                 </div>
                 <div>
@@ -160,7 +160,7 @@ export const Contact = () => {
                     placeholder="E.g. Mahakal Mandir"
                     value={formData.drop}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   />
                 </div>
               </div>
@@ -173,7 +173,7 @@ export const Contact = () => {
                     required
                     value={formData.carType}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   >
                     <option value="" disabled>Car Type</option>
                     <option value="Dzire">Dzire</option>
@@ -194,7 +194,7 @@ export const Contact = () => {
                     required
                     value={formData.date}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[rgba(10,10,15,0.7)] border border-[rgba(158,158,175,0.12)] rounded-xl text-white outline-none focus:border-accent-gold transition-all duration-300 text-sm color-scheme-dark"
+                    className="w-full px-4 py-3 bg-bg-primary border border-slate-200 rounded-xl text-text-primary outline-none focus:border-accent-gold focus:bg-white transition-all duration-300 text-sm"
                   />
                 </div>
               </div>

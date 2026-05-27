@@ -68,7 +68,7 @@ export const Blogs = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-heading font-semibold text-white group-hover:text-accent-gold transition-colors duration-300 line-clamp-2 leading-snug">
+                  <h3 className="text-xl font-heading font-semibold text-text-primary group-hover:text-accent-gold transition-colors duration-300 line-clamp-2 leading-snug">
                     {blog.title}
                   </h3>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiMessageCircle } from 'react-icons/fi';
 import { getWhatsAppLink } from '../../utils/whatsapp';
 
 /**
@@ -20,7 +20,7 @@ export const FloatingWhatsApp = () => {
       className="fixed bottom-[30px] right-[30px] w-[60px] h-[60px] bg-success-green rounded-full flex justify-center items-center z-[9999] shadow-[0_8px_30px_rgba(46,204,113,0.4)] animate-wa-pulse"
       aria-label="Book via WhatsApp"
     >
-      <FaWhatsapp className="text-white text-3xl" />
+      <FiMessageCircle className="text-white text-3xl" />
     </a>
   );
 };
