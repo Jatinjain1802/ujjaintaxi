@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiPhone, FiArrowRight } from 'react-icons/fi';
-import { FaWhatsapp, FaStar } from 'react-icons/fa';
+import { FiPhone, FiArrowRight, FiMessageCircle, FiStar } from 'react-icons/fi';
 
 import SectionHeader from '../../components/ui/SectionHeader';
 import Button from '../../components/ui/Button';
@@ -16,6 +15,18 @@ import { termsData } from '../../data/terms';
 import { getWhatsAppLink, generateBookingMessage } from '../../utils/whatsapp';
 
 export const Home = () => {
+  const [showDeferredSections, setShowDeferredSections] = useState(false);
+
+  useEffect(() => {
+    const scheduleDeferredContent = () => setShowDeferredSections(true);
+    if ('requestIdleCallback' in window) {
+      const idleId = window.requestIdleCallback(scheduleDeferredContent, { timeout: 1200 });
+      return () => window.cancelIdleCallback(idleId);
+    }
+    const timer = setTimeout(scheduleDeferredContent, 400);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Secondary Contact Form State
   const [contactForm, setContactForm] = useState({
     name: '',
@@ -73,7 +84,7 @@ export const Home = () => {
                 <FiPhone /> Call Now — 9522205111
               </Button>
               <Button variant="wa-ghost" href={getWhatsAppLink("Namaste, I want to inquire about Ujjain Taxi booking.")}>
-                <FaWhatsapp /> WhatsApp Karein
+                <FiMessageCircle /> WhatsApp Karein
               </Button>
             </div>
             <div className="flex flex-wrap gap-x-8 gap-y-3 text-xs md:text-sm text-text-muted border-t border-[rgba(158,158,175,0.12)] pt-6">
@@ -216,6 +227,8 @@ export const Home = () => {
         </div>
       </section>
 
+      {showDeferredSections && (
+      <>
       {/* 5. TOUR PACKAGES SECTION */}
       <section className="bg-bg-primary py-24 px-6 md:px-12">
         <div className="max-w-[1400px] mx-auto">
@@ -327,7 +340,7 @@ export const Home = () => {
               <div key={idx} className="bg-bg-primary rounded-2xl p-6 border border-[rgba(158,158,175,0.12)] flex flex-col justify-between">
                 <div>
                   <div className="flex gap-1 text-accent-gold text-sm mb-4">
-                    {[...Array(test.stars)].map((_, i) => <FaStar key={i} />)}
+                    {[...Array(test.stars)].map((_, i) => <FiStar key={i} />)}
                   </div>
                   <p className="text-sm italic text-text-muted leading-relaxed mb-6">"{test.quote}"</p>
                 </div>
@@ -480,6 +493,8 @@ export const Home = () => {
           </div>
         </div>
       </section>
+      </>
+      )}
 
     </div>
   );
