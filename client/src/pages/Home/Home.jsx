@@ -14,8 +14,24 @@ import { testimonialsData } from '../../data/testimonials';
 import { termsData } from '../../data/terms';
 import { getWhatsAppLink, generateBookingMessage } from '../../utils/whatsapp';
 
+const animatedTexts = [
+  "Mahakal Darshan",
+  "Omkareshwar Tour",
+  "Maa Bagla Mukhi",
+  "Dewas Darshan",
+  "Indore City Tour",
+  "Maheshwar Tour",
+  "Mandu Tour",
+  "Bhopal Tour",
+  "Pachmarhi Tour"
+];
+
 export const Home = () => {
   const [showDeferredSections, setShowDeferredSections] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
     const scheduleDeferredContent = () => setShowDeferredSections(true);
@@ -26,6 +42,36 @@ export const Home = () => {
     const timer = setTimeout(scheduleDeferredContent, 400);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    const currentFullText = animatedTexts[textIndex];
+    let timer;
+
+    if (!isDeleting && charIndex < currentFullText.length) {
+      // Typing phase: add characters one by one
+      timer = setTimeout(() => {
+        setDisplayedText(currentFullText.substring(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
+      }, 100); // 100ms per letter typing speed
+    } else if (!isDeleting && charIndex === currentFullText.length) {
+      // Pause phase: wait 2 seconds after finishing the word
+      timer = setTimeout(() => {
+        setIsDeleting(true);
+      }, 2000);
+    } else if (isDeleting && charIndex > 0) {
+      // Deleting phase: backspace character by character
+      timer = setTimeout(() => {
+        setDisplayedText(currentFullText.substring(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+      }, 55); // 55ms per letter deleting speed (slightly faster)
+    } else if (isDeleting && charIndex === 0) {
+      // Reset phase: move to next place name
+      setIsDeleting(false);
+      setTextIndex((prev) => (prev + 1) % animatedTexts.length);
+    }
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, textIndex]);
 
   // Secondary Contact Form State
   const [contactForm, setContactForm] = useState({
@@ -73,9 +119,12 @@ export const Home = () => {
             <span className="inline-block text-text-gold border border-[rgba(255,184,0,0.22)] px-[18px] py-1.5 rounded-full text-xs font-medium tracking-widest mb-8 bg-[rgba(255,184,0,0.06)] shadow-[inset_0_0_15px_rgba(255,184,0,0.1)]">
               ✦ Ujjain's Most Trusted Since 2001
             </span>
-            <h1 className="font-hero text-[3.8rem] md:text-[4.8rem] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent-saffron to-text-gold mb-6 animate-pulse">
-              Mahakal Darshan<br />Ki Sahi Sawari
-            </h1>
+            <div className="min-h-[140px] md:min-h-[180px] flex items-center">
+              <h1 className="font-hero text-[3.8rem] md:text-[4.8rem] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent-saffron to-text-gold mb-6 select-text">
+                {displayedText}
+                <span className="text-accent-saffron ml-1.5 inline-block animate-cursor-blink font-light select-none">|</span>
+              </h1>
+            </div>
             <p className="text-lg md:text-xl text-text-muted mb-10 tracking-wide">
               Local • Outstation • Airport • Pilgrimage Tours
             </p>

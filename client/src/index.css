@@ -6,23 +6,24 @@
   --font-body: "DM Sans", sans-serif;
   --font-numbers: "Space Mono", monospace;
 
-  --color-bg-primary: #FCFCFD;
+  --color-bg-primary: #F8F6F1;
   --color-bg-secondary: #FFFFFF;
-  --color-bg-tertiary: #F1F3F5;
+  --color-bg-tertiary: #EFEAE0;
 
-  --color-accent-gold: #FFB800;
-  --color-accent-gold-glow: rgba(255, 184, 0, 0.15);
-  --color-accent-saffron: #FF5722;
-  --color-accent-saffron-glow: rgba(255, 87, 34, 0.18);
+  --color-accent-gold: #C99700;
+  --color-accent-gold-glow: rgba(201, 151, 0, 0.16);
+  --color-accent-saffron: #E85D04;
+  --color-accent-saffron-glow: rgba(232, 93, 4, 0.18);
+  --color-accent-royal-navy: #1E2A44;
 
-  --color-text-primary: #111827;
+  --color-text-primary: #1F2937;
   --color-text-muted: #4B5563;
-  --color-text-gold: #D97706; /* Accessible Amber-600 */
+  --color-text-gold: #B88000;
 
   --color-success-green: #00C853;
   --color-success-green-glow: rgba(0, 200, 83, 0.15);
   
-  --shadow-royal: 0 10px 30px rgba(15, 23, 42, 0.06);
+  --shadow-royal: 0 10px 28px rgba(30, 42, 68, 0.12);
 }
 
 /* Custom premium scrollbar mimicking the original design */
@@ -31,15 +32,15 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FCFCFD;
+  background: #F8F6F1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #FFB800;
+  background: #C99700;
   border-radius: 10px;
-  border: 2px solid #FCFCFD;
+  border: 2px solid #F8F6F1;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF5722;
+  background: #E85D04;
 }
 
 /* Premium Animations */
@@ -65,29 +66,38 @@
 
 /* Custom glow utility classes */
 .glow-gold {
-  box-shadow: 0 0 30px rgba(255, 184, 0, 0.12);
+  box-shadow: 0 0 30px rgba(201, 151, 0, 0.14);
 }
 
 .glow-saffron {
-  box-shadow: 0 0 30px rgba(255, 87, 34, 0.12);
+  box-shadow: 0 0 30px rgba(232, 93, 4, 0.14);
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #FFB800 0%, #D69900 60%, #B37400 100%);
+  background: linear-gradient(135deg, #D9A10A 0%, #C99700 60%, #9F7700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-saffron-gradient {
-  background: linear-gradient(135deg, #FF8A65 0%, #FF5722 100%);
+  background: linear-gradient(135deg, #F08A4B 0%, #E85D04 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-saffron-gradient {
-  background: linear-gradient(135deg, #FF8A65 0%, #FF5722 100%);
+  background: linear-gradient(135deg, #F08A4B 0%, #E85D04 100%);
 }
 
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #FFC72C 0%, #FFB800 60%, #D69900 100%);
+  background: linear-gradient(135deg, #DEAE1E 0%, #C99700 60%, #AA7D00 100%);
 }
+
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 0.8s step-end infinite;
+}
+

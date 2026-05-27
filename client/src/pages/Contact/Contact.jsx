@@ -90,7 +90,7 @@ export const Contact = () => {
               <div>
                 <h4 className="text-sm text-text-muted mb-1">Office Address</h4>
                 <p className="text-text-primary leading-relaxed text-sm">
-                  67B, Atharva Vihar Colony, Ujjain-Indore Road, near Hotel Shanti Palace, Nanakheda, Ujjain — 456010
+                  67B, Atharva Vihar Colony, Ujjain-Indore Road, near Hotel Shanti Palace, Nanakheda, Ujjain - 456010
                 </p>
               </div>
             </div>
@@ -211,3 +211,4 @@ export const Contact = () => {
   );
 };
 export default Contact;
+
